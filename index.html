@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#ffd200" />
+  <title>Route 66 Subotica – Poručivanje</title>
+  <meta name="description" content="Route 66 Subotica – Dnevni meni i cenovnik pizza. Poruči preko Vibera ili pozivom. Plaćanje pouzećem ili preuzimanjem." />
+
+  <!-- External font (no uploads needed). Supports ČĆŠĐŽ. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --yellow:#ffd200;
+      --yellow2:#ffea7a;
+      --black:#0b0b0b;
+      --card:#111111;
+      --card2:#151515;
+      --line:#242424;
+      --text:#f6f6f6;
+      --muted:#bdbdbd;
+      --radius:18px;
+      --shadow: 0 14px 34px rgba(0,0,0,.35);
+      --max: 1080px;
+      --pad: 18px;
+      --ok:#24d27a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "DejaVu Sans", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 650px at 20% 0%, rgba(255,210,0,.22), transparent 55%),
+        radial-gradient(900px 520px at 85% 10%, rgba(255,210,0,.14), transparent 60%),
+        var(--black);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 26px var(--pad) 70px;}
+    .top{
+      border:1px solid var(--line);
+      background: rgba(17,17,17,.78);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+    .hero{
+      padding: 18px 18px 14px;
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      border-bottom:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,210,0,.16), rgba(0,0,0,0));
+    }
+    .brand h1{
+      margin:0;
+      font-size: 22px;
+      letter-spacing:.2px;
+    }
+    .brand p{
+      margin:8px 0 0;
+      color:var(--muted);
+      line-height:1.35;
+      font-size: 13px;
+      max-width: 760px;
+    }
+    .badges{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      background: rgba(255,210,0,.95);
+      color:#141414;
+    }
+    .badge.dark{
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      border:1px solid rgba(255,255,255,.12);
+      font-weight:700;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .btn{
+      border:1px solid var(--line);
+      background: var(--card2);
+      color: var(--text);
+      padding: 11px 14px;
+      border-radius: 14px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn-yellow{
+      background: linear-gradient(180deg, var(--yellow2), var(--yellow));
+      color:#141414;
+      border-color: rgba(255,210,0,.5);
+    }
+    .btn-green{
+      background: linear-gradient(180deg, #36f09a, var(--ok));
+      color:#08140e;
+      border-color: rgba(36,210,122,.45);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      padding: 16px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr;} }
+
+    .card{
+      border:1px solid var(--line);
+      background: rgba(17,17,17,.8);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding: 14px 14px 12px;
+      border-bottom: 1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      background: rgba(255,210,0,.06);
+    }
+    .card .hd h2{margin:0; font-size: 15px}
+    .card .hd small{color:var(--muted)}
+    .card .bd{padding: 14px}
+
+    .sectionTitle{
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 800;
+      letter-spacing:.2px;
+      text-transform: uppercase;
+    }
+
+    /* Menu list styling */
+    .dailyList{
+      display:grid;
+      gap:10px;
+    }
+    .day{
+      border:1px solid #252525;
+      background: rgba(0,0,0,.22);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .dayTop{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:8px;
+    }
+    .dayName{
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--yellow);
+      letter-spacing:.2px;
+    }
+    .dayItems{
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .priceBar{
+      margin-top:10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px dashed rgba(255,210,0,.35);
+      background: rgba(255,210,0,.06);
+    }
+    .priceBar strong{color:var(--yellow)}
+    .priceBar span{color:var(--muted); font-size: 12px}
+
+    /* Pizza table */
+    .pizzaTable{
+      width:100%;
+      border-collapse: collapse;
+      overflow:hidden;
+      border-radius: 14px;
+      border:1px solid #252525;
+      background: rgba(0,0,0,.18);
+    }
+    .pizzaTable th, .pizzaTable td{
+      padding: 10px 10px;
+      border-bottom: 1px solid #242424;
+      vertical-align: top;
+      font-size: 12.8px;
+      line-height: 1.35;
+    }
+    .pizzaTable th{
+      text-align:left;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing:.2px;
+      background: rgba(255,210,0,.06);
+    }
+    .pizzaName{
+      font-weight: 900;
+      color: var(--text);
+      font-size: 13px;
+    }
+    .ing{
+      color: var(--muted);
+      font-size: 12px;
+      margin-top:4px;
+    }
+    .pr{
+      white-space:nowrap;
+      font-weight: 900;
+      color: var(--yellow);
+      text-align:right;
+    }
+
+    /* Order form */
+    label{display:block; font-weight:900; font-size:12px; margin: 12px 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing:.18px}
+    input, textarea, select{
+      width:100%;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border:1px solid #2a2a2a;
+      background:#0f0f0f;
+      color:var(--text);
+      outline:none;
+      font-size: 14px;
+    }
+    textarea{min-height: 88px; resize: vertical;}
+    .row{display:grid; grid-template-columns: 1fr 1fr; gap: 12px;}
+    @media (max-width: 520px){ .row{grid-template-columns:1fr;} }
+
+    .choiceGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 520px){ .choiceGrid{grid-template-columns:1fr;} }
+
+    .hint{
+      margin-top:10px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+      padding: 12px;
+      border-radius: 14px;
+      border:1px dashed #2c2c2c;
+      background: rgba(0,0,0,.18);
+    }
+    .hint strong{color: var(--yellow)}
+    .submitRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 14px;
+      align-items:center;
+    }
+    .submitRow button{
+      border:0;
+      cursor:pointer;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-weight: 1000;
+      background: linear-gradient(180deg, var(--yellow2), var(--yellow));
+      color:#121212;
+      box-shadow: 0 14px 28px rgba(0,0,0,.35);
+    }
+    .submitRow button:active{transform: translateY(1px)}
+    .mini{margin-top:10px; font-size: 12px; color: var(--muted);}
+
+    /* Sticky bottom bar for mobile */
+    .sticky{
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 10px 12px;
+      background: rgba(11,11,11,.85);
+      border-top:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      z-index: 50;
+    }
+    .sticky .btn{box-shadow:none}
+    @media (min-width: 981px){ .sticky{display:none;} }
+
+    footer{
+      text-align:center;
+      margin-top:16px;
+      color: var(--muted);
+      font-size: 12px;
+      opacity: .9;
+      padding-bottom: 40px;
+    }
+    code{
+      background: rgba(255,255,255,.08);
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="top" id="top">
+      <div class="hero">
+        <div class="brand">
+          <h1>Route 66 Subotica</h1>
+          <p>
+            Dnevni meni (nedeljno) + cenovnik pizza. Poručivanje je brzo preko Vibera ili pozivom.
+            <strong>Plaćanje nije online</strong>: plaćate <strong>pouzećem</strong> kada stigne dostava ili <strong>prilikom preuzimanja</strong>.
+          </p>
+          <div class="badges">
+            <span class="badge">🟡 Jedan klik porudžbina</span>
+            <span class="badge dark">📞 061 6856590</span>
+            <span class="badge dark">🟢 Viber porudžbine</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-yellow" href="#poruci">Poruči odmah</a>
+          <a class="btn" href="tel:+381616856590">Pozovi</a>
+          <a class="btn btn-green" href="#" id="quickViber">Viber</a>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- LEFT: MENUS -->
+        <section class="card">
+          <div class="hd">
+            <h2>Meni (kompletno)</h2>
+            <small>Sve je upisano u stranicu (bez slika)</small>
+          </div>
+
+          <div class="bd">
+            <div class="sectionTitle">Dnevni meni</div>
+
+            <div class="dailyList" id="dailyMenu">
+              <div class="day">
+                <div class="dayTop">
+                  <div class="dayName">Ponedeljak</div>
+                </div>
+                <div class="dayItems">Čorba od povrća, fašir, pire krompir, varivo</div>
+              </div>
+
+              <div class="day">
+                <div class="dayTop">
+                  <div class="dayName">Utorak</div>
+                </div>
+                <div class="dayItems">Čorba od boranije, pariska šnicla, pečeni krompir, salata</div>
+              </div>
+
+              <div class="day">
+                <div class="dayTop">
+                  <div class="dayName">Sreda</div>
+                </div>
+                <div class="dayItems">Bistra supa, perkelt na naš način, pire krompir, turšija</div>
+              </div>
+
+              <div class="day">
+                <div class="dayTop">
+                  <div class="dayName">Četvrtak</div>
+                </div>
+                <div class="dayItems">Ragu čorba, špagete karbonara, salata</div>
+              </div>
+
+              <div class="day">
+                <div class="dayTop">
+                  <div class="dayName">Petak</div>
+                </div>
+                <div class="dayItems">Paradajz čorba, mešano meso, pomfrit, salata</div>
+              </div>
+
+              <div class="day">
+                <div class="dayTop">
+                  <div class="dayName">Subota</div>
+                </div>
+                <div class="dayItems">Bistra supa, bečka šnicla, pire krompir, salata</div>
+              </div>
+            </div>
+
+            <div class="priceBar">
+              <div><strong>Cena dnevnog menija:</strong> 600 din</div>
+              <span>Telefon: 061 6856590 · Plaćanje pouzećem ili preuzimanjem</span>
+            </div>
+
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:16px 0;">
+
+            <div class="sectionTitle">Cenovnik pizza (Ø 30cm – Ø 50cm)</div>
+
+            <table class="pizzaTable" aria-label="Cenovnik pizza">
+              <thead>
+                <tr>
+                  <th>Pizza</th>
+                  <th style="text-align:right;">Cena</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="pizzaName">1. Pizza sa sirom</div>
+                    <div class="ing">kečap, sir</div>
+                  </td>
+                  <td class="pr">650 – 1400 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">2. Pizza sa šunkom</div>
+                    <div class="ing">kečap, sir, šunka</div>
+                  </td>
+                  <td class="pr">700 – 1500 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">3. Pizza sa gljivama</div>
+                    <div class="ing">kečap, sir, šunka, gljive</div>
+                  </td>
+                  <td class="pr">730 – 1550 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">4. Pizza mešana</div>
+                    <div class="ing">kečap, sir, šunka, gljive, paprika</div>
+                  </td>
+                  <td class="pr">730 – 1550 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">5. Pizza 4 godišnja doba</div>
+                    <div class="ing">kečap, sir, šunka, gljive, kukuruz, paprika-gljive, kulen</div>
+                  </td>
+                  <td class="pr">750 – 1600 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">6. Pizza sa pečenicom</div>
+                    <div class="ing">kečap, sir, šunka, pečenica, ajvar, pavlaka</div>
+                  </td>
+                  <td class="pr">750 – 1650 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">7. Pizza sa slaninom</div>
+                    <div class="ing">kečap, sir, šunka, gljive, slanina, luk</div>
+                  </td>
+                  <td class="pr">750 – 1650 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">8. Pizza domaća</div>
+                    <div class="ing">kečap, sir, šunka, kulen, jaje, paprika</div>
+                  </td>
+                  <td class="pr">750 – 1650 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">9. Pizza srpska</div>
+                    <div class="ing">kečap, sir, šunka, kulen, pečenica, crni luk, pavlaka</div>
+                  </td>
+                  <td class="pr">750 – 1650 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">10. Pizza sa piletinom</div>
+                    <div class="ing">kečap, sir, pileće belo, paradajz, pavlaka</div>
+                  </td>
+                  <td class="pr">750 – 1650 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">11. Pizza sa kukuruzom</div>
+                    <div class="ing">pavlaka, šunka, sir, kukuruz</div>
+                  </td>
+                  <td class="pr">730 – 1550 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">12. Pizza sa ananasom</div>
+                    <div class="ing">pavlaka, sir, šunka, ananas</div>
+                  </td>
+                  <td class="pr">750 – 1600 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">13. Pizza vegetarijanska</div>
+                    <div class="ing">kečap, sir, gljive, kukuruz, paprika, masline</div>
+                  </td>
+                  <td class="pr">700 – 1500 din</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pizzaName">14. Pizza Route</div>
+                    <div class="ing">kečap, sir, šunka, gljive, kulen, pečenica, jaje, paprika, pavlaka</div>
+                  </td>
+                  <td class="pr">800 – 1700 din</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="hint" style="margin-top:12px;">
+              <strong>Napomena:</strong> Cene su prikazane kao raspon (30cm–50cm) kao na meniju. Tačnu veličinu birate u porudžbini.
+            </div>
+          </div>
+        </section>
+
+        <!-- RIGHT: ORDER -->
+        <aside class="card" id="poruci">
+          <div class="hd">
+            <h2>Brza porudžbina</h2>
+            <small>Viber poruka (1 klik)</small>
+          </div>
+
+          <div class="bd">
+            <form id="orderForm">
+              <div class="row">
+                <div>
+                  <label for="name">Ime i prezime</label>
+                  <input id="name" name="name" autocomplete="name" placeholder="Npr. Marko Marković" required>
+                </div>
+                <div>
+                  <label for="phone">Telefon</label>
+                  <input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="Npr. 06x..." required>
+                </div>
+              </div>
+
+              <label for="pickup">Način</label>
+              <select id="pickup" name="pickup" required>
+                <option value="Dostava">Dostava</option>
+                <option value="Lično preuzimanje">Lično preuzimanje</option>
+              </select>
+
+              <label for="address">Adresa (ako je dostava)</label>
+              <input id="address" name="address" autocomplete="street-address" placeholder="Ulica i broj, sprat, interfon...">
+
+              <div class="choiceGrid">
+                <div>
+                  <label for="dailyDay">Dnevni meni (opciono)</label>
+                  <select id="dailyDay" name="dailyDay">
+                    <option value="">Ne poručujem dnevni meni</option>
+                    <option value="Ponedeljak – Čorba od povrća, fašir, pire krompir, varivo">Ponedeljak (600 din)</option>
+                    <option value="Utorak – Čorba od boranije, pariska šnicla, pečeni krompir, salata">Utorak (600 din)</option>
+                    <option value="Sreda – Bistra supa, perkelt na naš način, pire krompir, turšija">Sreda (600 din)</option>
+                    <option value="Četvrtak – Ragu čorba, špagete karbonara, salata">Četvrtak (600 din)</option>
+                    <option value="Petak – Paradajz čorba, mešano meso, pomfrit, salata">Petak (600 din)</option>
+                    <option value="Subota – Bistra supa, bečka šnicla, pire krompir, salata">Subota (600 din)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="dailyQty">Količina (dnevni meni)</label>
+                  <select id="dailyQty" name="dailyQty">
+                    <option value="0">0</option>
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+              </div>
+
+              <label for="pizza">Pizza (opciono)</label>
+              <select id="pizza" name="pizza">
+                <option value="">Ne poručujem pizzu</option>
+                <option value="Pizza sa sirom">1. Pizza sa sirom</option>
+                <option value="Pizza sa šunkom">2. Pizza sa šunkom</option>
+                <option value="Pizza sa gljivama">3. Pizza sa gljivama</option>
+                <option value="Pizza mešana">4. Pizza mešana</option>
+                <option value="Pizza 4 godišnja doba">5. Pizza 4 godišnja doba</option>
+                <option value="Pizza sa pečenicom">6. Pizza sa pečenicom</option>
+                <option value="Pizza sa slaninom">7. Pizza sa slaninom</option>
+                <option value="Pizza domaća">8. Pizza domaća</option>
+                <option value="Pizza srpska">9. Pizza srpska</option>
+                <option value="Pizza sa piletinom">10. Pizza sa piletinom</option>
+                <option value="Pizza sa kukuruzom">11. Pizza sa kukuruzom</option>
+                <option value="Pizza sa ananasom">12. Pizza sa ananasom</option>
+                <option value="Pizza vegetarijanska">13. Pizza vegetarijanska</option>
+                <option value="Pizza Route">14. Pizza Route</option>
+              </select>
+
+              <div class="choiceGrid">
+                <div>
+                  <label for="size">Veličina</label>
+                  <select id="size" name="size">
+                    <option value="30cm">30cm</option>
+                    <option value="50cm">50cm</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="pizzaQty">Količina (pizza)</label>
+                  <select id="pizzaQty" name="pizzaQty">
+                    <option value="0">0</option>
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+              </div>
+
+              <label for="note">Napomena (opciono)</label>
+              <textarea id="note" name="note" placeholder="Npr: bez luka, ljuto, vreme dostave..."></textarea>
+
+              <div class="hint">
+                <strong>Plaćanje:</strong> pouzećem (kada stigne dostava) ili prilikom preuzimanja. <br>
+                Klik na dugme šalje poruku na <strong>Viber 061 6856590</strong>.
+              </div>
+
+              <div class="submitRow">
+                <button type="submit">Pošalji porudžbinu na Viber</button>
+                <a class="btn" href="tel:+381616856590">Pozovi</a>
+              </div>
+
+              <div class="mini">
+                Ako ste na telefonu sa Viber-om instaliranim, otvara se direktno chat. Ako ne, otvoriće se Viber web link.
+              </div>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <footer>
+      © <span id="y"></span> Route 66 Subotica · Telefon/Viber: 061 6856590 · Porudžbine bez online plaćanja
+    </footer>
+  </div>
+
+  <!-- Sticky bar (mobile) -->
+  <div class="sticky" role="navigation" aria-label="Brze akcije">
+    <a class="btn btn-yellow" href="#poruci">Poruči</a>
+    <a class="btn" href="tel:+381616856590">Pozovi</a>
+    <a class="btn btn-green" href="#" id="stickyViber">Viber</a>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Viber number
+    const VIBER_E164 = "+381616856590";
+    const VIBER_WEB = "https://viber.me/0616856590";
+
+    function openViberWithText(text){
+      const encoded = encodeURIComponent(text);
+      const deep = `viber://chat?number=${encodeURIComponent(VIBER_E164)}&text=${encoded}`;
+      window.location.href = deep;
+      setTimeout(() => window.open(VIBER_WEB, "_blank"), 900);
+    }
+
+    // Quick Viber buttons (no order, just hello)
+    const quickText = "Zdravo! Želim da poručim iz Route 66. 🙂";
+    document.getElementById("quickViber").addEventListener("click", (e) => {
+      e.preventDefault();
+      openViberWithText(quickText);
+    });
+    document.getElementById("stickyViber").addEventListener("click", (e) => {
+      e.preventDefault();
+      openViberWithText(quickText);
+    });
+
+    function buildOrderMessage(data){
+      const lines = [
+        "ROUTE 66 – PORUDŽBINA",
+        "",
+        `Ime: ${data.name}`,
+        `Telefon: ${data.phone}`,
+        `Način: ${data.pickup}`,
+        data.address ? `Adresa: ${data.address}` : "Adresa: (nije navedena)",
+        "",
+        "Stavke:"
+      ];
+
+      // Daily menu
+      if (data.dailyDay && data.dailyQty > 0){
+        lines.push(`- Dnevni meni (${data.dailyQty}x): ${data.dailyDay} (600 din/kom)`);
+      }
+
+      // Pizza
+      if (data.pizza && data.pizzaQty > 0){
+        lines.push(`- Pizza (${data.pizzaQty}x): ${data.pizza} – ${data.size}`);
+      }
+
+      if ((!data.dailyDay || data.dailyQty === 0) && (!data.pizza || data.pizzaQty === 0)){
+        lines.push("- (Nije izabrano ništa. Molimo napišite šta poručujete.)");
+      }
+
+      lines.push("");
+      lines.push(data.note ? `Napomena: ${data.note}` : "Napomena: (nema)");
+      lines.push("");
+      lines.push("Plaćanje: pouzećem ili preuzimanje.");
+      return lines.join("\n");
+    }
+
+    // Form submit -> Viber order message
+    document.getElementById("orderForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const f = e.target;
+
+      const data = {
+        name: f.name.value.trim(),
+        phone: f.phone.value.trim(),
+        pickup: f.pickup.value,
+        address: f.address.value.trim(),
+        dailyDay: f.dailyDay.value,
+        dailyQty: parseInt(f.dailyQty.value, 10) || 0,
+        pizza: f.pizza.value,
+        size: f.size.value,
+        pizzaQty: parseInt(f.pizzaQty.value, 10) || 0,
+        note: f.note.value.trim()
+      };
+
+      const msg = buildOrderMessage(data);
+      openViberWithText(msg);
+    });
+  </script>
+</body>
+</html>
