@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#ffd200" />
   <title>Route 66 Subotica – Poručivanje</title>
-  <meta name="description" content="Route 66 Subotica – Dnevni meni i cenovnik pizza. Poruči preko Vibera ili pozivom. Plaćanje pouzećem ili preuzimanjem." />
+  <meta name="description" content="Route 66 Subotica – Dnevni meni i cenovnik. Poruči preko Vibera ili pozivom. Plaćanje pouzećem ili preuzimanjem." />
 
   <!-- External font (no uploads needed). Supports ČĆŠĐŽ. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,8 +69,23 @@
       color:var(--muted);
       line-height:1.35;
       font-size: 13px;
-      max-width: 760px;
+      max-width: 820px;
     }
+
+    .notice{
+      margin-top:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px dashed rgba(255,210,0,.35);
+      background: rgba(255,210,0,.07);
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .notice strong{color:var(--yellow)}
+    .notice span{color:var(--text); font-size: 12.8px; line-height:1.35}
+
     .badges{
       margin-top:10px;
       display:flex;
@@ -211,8 +226,8 @@
     .priceBar strong{color:var(--yellow)}
     .priceBar span{color:var(--muted); font-size: 12px}
 
-    /* Pizza table */
-    .pizzaTable{
+    /* Tables (pizza + other menus) */
+    .menuTable{
       width:100%;
       border-collapse: collapse;
       overflow:hidden;
@@ -220,14 +235,14 @@
       border:1px solid #252525;
       background: rgba(0,0,0,.18);
     }
-    .pizzaTable th, .pizzaTable td{
+    .menuTable th, .menuTable td{
       padding: 10px 10px;
       border-bottom: 1px solid #242424;
       vertical-align: top;
       font-size: 12.8px;
       line-height: 1.35;
     }
-    .pizzaTable th{
+    .menuTable th{
       text-align:left;
       font-size: 12px;
       color: var(--muted);
@@ -236,12 +251,12 @@
       letter-spacing:.2px;
       background: rgba(255,210,0,.06);
     }
-    .pizzaName{
+    .menuName{
       font-weight: 900;
       color: var(--text);
       font-size: 13px;
     }
-    .ing{
+    .sub{
       color: var(--muted);
       font-size: 12px;
       margin-top:4px;
@@ -251,6 +266,21 @@
       font-weight: 900;
       color: var(--yellow);
       text-align:right;
+    }
+
+    .pillList{
+      margin-top:10px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .pill{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
     }
 
     /* Order form */
@@ -350,9 +380,14 @@
         <div class="brand">
           <h1>Route 66 Subotica</h1>
           <p>
-            Dnevni meni (nedeljno) + cenovnik pizza. Poručivanje je brzo preko Vibera ili pozivom.
+            Dnevni meni (nedeljno) + kompletan cenovnik. Poručivanje je brzo preko Vibera ili pozivom.
             <strong>Plaćanje nije online</strong>: plaćate <strong>pouzećem</strong> kada stigne dostava ili <strong>prilikom preuzimanja</strong>.
           </p>
+
+          <div class="notice" aria-label="Informacije o dostavi">
+            <span>🚚 <strong>Dostava:</strong> besplatna za porudžbine od <strong>1000 din</strong> (do <strong>5 km</strong>). Za porudžbine ispod <strong>1000 din</strong>, dostava je <strong>260 din</strong>.</span>
+          </div>
+
           <div class="badges">
             <span class="badge">🟡 Jedan klik porudžbina</span>
             <span class="badge dark">📞 061 6856590</span>
@@ -376,62 +411,50 @@
           </div>
 
           <div class="bd">
-            <div class="sectionTitle">Dnevni meni</div>
+            <div class="sectionTitle">Dnevni meni (nedeljno)</div>
 
             <div class="dailyList" id="dailyMenu">
               <div class="day">
-                <div class="dayTop">
-                  <div class="dayName">Ponedeljak</div>
-                </div>
+                <div class="dayTop"><div class="dayName">Ponedeljak</div></div>
                 <div class="dayItems">Čorba od povrća, fašir, pire krompir, varivo</div>
               </div>
 
               <div class="day">
-                <div class="dayTop">
-                  <div class="dayName">Utorak</div>
-                </div>
+                <div class="dayTop"><div class="dayName">Utorak</div></div>
                 <div class="dayItems">Čorba od boranije, pariska šnicla, pečeni krompir, salata</div>
               </div>
 
               <div class="day">
-                <div class="dayTop">
-                  <div class="dayName">Sreda</div>
-                </div>
+                <div class="dayTop"><div class="dayName">Sreda</div></div>
                 <div class="dayItems">Bistra supa, perkelt na naš način, pire krompir, turšija</div>
               </div>
 
               <div class="day">
-                <div class="dayTop">
-                  <div class="dayName">Četvrtak</div>
-                </div>
+                <div class="dayTop"><div class="dayName">Četvrtak</div></div>
                 <div class="dayItems">Ragu čorba, špagete karbonara, salata</div>
               </div>
 
               <div class="day">
-                <div class="dayTop">
-                  <div class="dayName">Petak</div>
-                </div>
+                <div class="dayTop"><div class="dayName">Petak</div></div>
                 <div class="dayItems">Paradajz čorba, mešano meso, pomfrit, salata</div>
               </div>
 
               <div class="day">
-                <div class="dayTop">
-                  <div class="dayName">Subota</div>
-                </div>
+                <div class="dayTop"><div class="dayName">Subota</div></div>
                 <div class="dayItems">Bistra supa, bečka šnicla, pire krompir, salata</div>
               </div>
             </div>
 
             <div class="priceBar">
               <div><strong>Cena dnevnog menija:</strong> 600 din</div>
-              <span>Telefon: 061 6856590 · Plaćanje pouzećem ili preuzimanjem</span>
+              <span>Uključuje: supa, glavno jelo, prilozi, hleb</span>
             </div>
 
             <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:16px 0;">
 
             <div class="sectionTitle">Cenovnik pizza (Ø 30cm – Ø 50cm)</div>
 
-            <table class="pizzaTable" aria-label="Cenovnik pizza">
+            <table class="menuTable" aria-label="Cenovnik pizza">
               <thead>
                 <tr>
                   <th>Pizza</th>
@@ -441,99 +464,99 @@
               <tbody>
                 <tr>
                   <td>
-                    <div class="pizzaName">1. Pizza sa sirom</div>
-                    <div class="ing">kečap, sir</div>
+                    <div class="menuName">1. Pizza sa sirom</div>
+                    <div class="sub">kečap, sir</div>
                   </td>
                   <td class="pr">650 – 1400 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">2. Pizza sa šunkom</div>
-                    <div class="ing">kečap, sir, šunka</div>
+                    <div class="menuName">2. Pizza sa šunkom</div>
+                    <div class="sub">kečap, sir, šunka</div>
                   </td>
                   <td class="pr">700 – 1500 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">3. Pizza sa gljivama</div>
-                    <div class="ing">kečap, sir, šunka, gljive</div>
+                    <div class="menuName">3. Pizza sa gljivama</div>
+                    <div class="sub">kečap, sir, šunka, gljive</div>
                   </td>
                   <td class="pr">730 – 1550 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">4. Pizza mešana</div>
-                    <div class="ing">kečap, sir, šunka, gljive, paprika</div>
+                    <div class="menuName">4. Pizza mešana</div>
+                    <div class="sub">kečap, sir, šunka, gljive, paprika</div>
                   </td>
                   <td class="pr">730 – 1550 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">5. Pizza 4 godišnja doba</div>
-                    <div class="ing">kečap, sir, šunka, gljive, kukuruz, paprika-gljive, kulen</div>
+                    <div class="menuName">5. Pizza 4 godišnja doba</div>
+                    <div class="sub">kečap, sir, šunka, gljive, kukuruz, paprika-gljive, kulen</div>
                   </td>
                   <td class="pr">750 – 1600 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">6. Pizza sa pečenicom</div>
-                    <div class="ing">kečap, sir, šunka, pečenica, ajvar, pavlaka</div>
+                    <div class="menuName">6. Pizza sa pečenicom</div>
+                    <div class="sub">kečap, sir, šunka, pečenica, ajvar, pavlaka</div>
                   </td>
                   <td class="pr">750 – 1650 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">7. Pizza sa slaninom</div>
-                    <div class="ing">kečap, sir, šunka, gljive, slanina, luk</div>
+                    <div class="menuName">7. Pizza sa slaninom</div>
+                    <div class="sub">kečap, sir, šunka, gljive, slanina, luk</div>
                   </td>
                   <td class="pr">750 – 1650 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">8. Pizza domaća</div>
-                    <div class="ing">kečap, sir, šunka, kulen, jaje, paprika</div>
+                    <div class="menuName">8. Pizza domaća</div>
+                    <div class="sub">kečap, sir, šunka, kulen, jaje, paprika</div>
                   </td>
                   <td class="pr">750 – 1650 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">9. Pizza srpska</div>
-                    <div class="ing">kečap, sir, šunka, kulen, pečenica, crni luk, pavlaka</div>
+                    <div class="menuName">9. Pizza srpska</div>
+                    <div class="sub">kečap, sir, šunka, kulen, pečenica, crni luk, pavlaka</div>
                   </td>
                   <td class="pr">750 – 1650 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">10. Pizza sa piletinom</div>
-                    <div class="ing">kečap, sir, pileće belo, paradajz, pavlaka</div>
+                    <div class="menuName">10. Pizza sa piletinom</div>
+                    <div class="sub">kečap, sir, pileće belo, paradajz, pavlaka</div>
                   </td>
                   <td class="pr">750 – 1650 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">11. Pizza sa kukuruzom</div>
-                    <div class="ing">pavlaka, šunka, sir, kukuruz</div>
+                    <div class="menuName">11. Pizza sa kukuruzom</div>
+                    <div class="sub">pavlaka, šunka, sir, kukuruz</div>
                   </td>
                   <td class="pr">730 – 1550 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">12. Pizza sa ananasom</div>
-                    <div class="ing">pavlaka, sir, šunka, ananas</div>
+                    <div class="menuName">12. Pizza sa ananasom</div>
+                    <div class="sub">pavlaka, sir, šunka, ananas</div>
                   </td>
                   <td class="pr">750 – 1600 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">13. Pizza vegetarijanska</div>
-                    <div class="ing">kečap, sir, gljive, kukuruz, paprika, masline</div>
+                    <div class="menuName">13. Pizza vegetarijanska</div>
+                    <div class="sub">kečap, sir, gljive, kukuruz, paprika, masline</div>
                   </td>
                   <td class="pr">700 – 1500 din</td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="pizzaName">14. Pizza Route</div>
-                    <div class="ing">kečap, sir, šunka, gljive, kulen, pečenica, jaje, paprika, pavlaka</div>
+                    <div class="menuName">14. Pizza Route</div>
+                    <div class="sub">kečap, sir, šunka, gljive, kulen, pečenica, jaje, paprika, pavlaka</div>
                   </td>
                   <td class="pr">800 – 1700 din</td>
                 </tr>
@@ -543,6 +566,130 @@
             <div class="hint" style="margin-top:12px;">
               <strong>Napomena:</strong> Cene su prikazane kao raspon (30cm–50cm) kao na meniju. Tačnu veličinu birate u porudžbini.
             </div>
+
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:18px 0;">
+
+            <div class="sectionTitle">Kuvana jela (mala / velika porcija)</div>
+            <table class="menuTable" aria-label="Kuvana jela">
+              <thead>
+                <tr>
+                  <th>Jelo</th>
+                  <th style="text-align:right;">Cena</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><div class="menuName">1. Tarana sa srpskom kobasicom</div></td><td class="pr">410 / 540 din</td></tr>
+                <tr><td><div class="menuName">2. Piletina u sosu od pavlake</div></td><td class="pr">440 / 610 din</td></tr>
+                <tr><td><div class="menuName">3. Pasulj sa butkicom</div></td><td class="pr">440 / 610 din</td></tr>
+                <tr><td><div class="menuName">4. Slatki kupus sa butkicom</div></td><td class="pr">440 / 610 din</td></tr>
+                <tr><td><div class="menuName">5. Ćufte u paradajz sosu</div></td><td class="pr">470 / 620 din</td></tr>
+                <tr><td><div class="menuName">6. Gulaš od svinjskog mesa</div></td><td class="pr">470 / 630 din</td></tr>
+                <tr><td><div class="menuName">7. Sarma / punjena paprika</div></td><td class="pr">470 / 650 din</td></tr>
+                <tr><td><div class="menuName">8. Špagete bolognese</div></td><td class="pr">450 / 610 din</td></tr>
+              </tbody>
+            </table>
+
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:18px 0;">
+
+            <div class="sectionTitle">Pohovani obroci u porciji</div>
+            <table class="menuTable" aria-label="Pohovani obroci u porciji">
+              <thead>
+                <tr>
+                  <th>Jelo</th>
+                  <th style="text-align:right;">Cena</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><div class="menuName">1. Bečka šnicla sa prilozima</div></td><td class="pr">440 / 610 din</td></tr>
+                <tr><td><div class="menuName">2. Karadorđeva šnicla sa prilozima</div></td><td class="pr">500 / 650 din</td></tr>
+                <tr><td><div class="menuName">3. Pileći štapići sa prilozima</div></td><td class="pr">440 / 610 din</td></tr>
+                <tr><td><div class="menuName">4. Pileći štapići (med, med senf, caciki) sa prilozima</div></td><td class="pr">470 / 640 din</td></tr>
+                <tr><td><div class="menuName">5. Pohovani sir sa prilozima</div></td><td class="pr">440 / 610 din</td></tr>
+                <tr><td><div class="menuName">6. Pohovana punjena palačinka sa prilozima</div></td><td class="pr">560 din</td></tr>
+              </tbody>
+            </table>
+
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:18px 0;">
+
+            <div class="sectionTitle">Pečeni obroci u porciji</div>
+            <table class="menuTable" aria-label="Pečeni obroci u porciji">
+              <thead>
+                <tr>
+                  <th>Jelo</th>
+                  <th style="text-align:right;">Cena</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><div class="menuName">7. Pileća krilca sa prilozima</div></td><td class="pr">440 / 610 din</td></tr>
+                <tr><td><div class="menuName">8. Pileća krilca (med, med senf, caciki) sa prilozima</div></td><td class="pr">470 / 640 din</td></tr>
+                <tr><td><div class="menuName">9. Grilovano belo meso sa prilozima</div></td><td class="pr">440 / 610 din</td></tr>
+                <tr><td><div class="menuName">10. Grilovano belo sa sirom i prilozima</div></td><td class="pr">470 / 630 din</td></tr>
+                <tr><td><div class="menuName">11. Texas piletina sa prilozima</div></td><td class="pr">500 / 660 din</td></tr>
+                <tr><td><div class="menuName">12. Kanzas piletina sa prilozima</div></td><td class="pr">500 / 660 din</td></tr>
+                <tr><td><div class="menuName">13. Mexico piletina sa prilozima</div></td><td class="pr">520 / 680 din</td></tr>
+                <tr><td><div class="menuName">14. Pečeni pileći batak sa prilozima</div></td><td class="pr">540 din</td></tr>
+                <tr><td><div class="menuName">15. Pečena slanina sa prilozima</div></td><td class="pr">550 din</td></tr>
+                <tr><td><div class="menuName">16. Fašir sa prilozima</div></td><td class="pr">530 din</td></tr>
+                <tr><td><div class="menuName">17. Pečena kobasica sa prilozima</div></td><td class="pr">540 din</td></tr>
+                <tr><td><div class="menuName">18. Pljeskavica u porciji sa prilozima</div></td><td class="pr">500 din</td></tr>
+                <tr><td><div class="menuName">19. Ćevapi u porciji sa prilozima</div></td><td class="pr">500 / 900 din</td></tr>
+              </tbody>
+            </table>
+
+            <div class="hint" style="margin-top:12px;">
+              <strong>Prilozi:</strong>
+              pomfrit, bareni krompir, krompir pire, spanać, grašak, pirinač, sos od paradajza, kupus salata, krastavac salata, mešana salata, ruska salata, luk u pavlaci
+            </div>
+
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:18px 0;">
+
+            <div class="sectionTitle">Salate i dodaci</div>
+            <table class="menuTable" aria-label="Salate i dodaci">
+              <thead>
+                <tr>
+                  <th>Stavka</th>
+                  <th style="text-align:right;">Cena</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><div class="menuName">20. Cezar salata</div></td><td class="pr">450 din</td></tr>
+                <tr><td><div class="menuName">Sos od višnje</div></td><td class="pr">140 din</td></tr>
+              </tbody>
+            </table>
+
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:18px 0;">
+
+            <div class="sectionTitle">Ovali</div>
+            <table class="menuTable" aria-label="Ovali">
+              <thead>
+                <tr>
+                  <th>Oval</th>
+                  <th style="text-align:right;">Cena</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><div class="menuName">Pohovani oval <span class="sub">(3–4 osoba)</span></div></td><td class="pr">2500 din</td></tr>
+                <tr><td><div class="menuName">Mix oval <span class="sub">(3–4 osobe)</span></div></td><td class="pr">2500 din</td></tr>
+                <tr><td><div class="menuName">Route oval mali <span class="sub">(2–3 osobe)</span></div></td><td class="pr">2000 din</td></tr>
+                <tr><td><div class="menuName">Route oval veliki <span class="sub">(5–7 osoba)</span></div></td><td class="pr">3900 din</td></tr>
+              </tbody>
+            </table>
+
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:18px 0;">
+
+            <div class="sectionTitle">Deserti</div>
+            <table class="menuTable" aria-label="Deserti">
+              <thead>
+                <tr>
+                  <th>Desert</th>
+                  <th style="text-align:right;">Cena</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><div class="menuName">Palačinke sa nutelom/kajsijom <span class="sub">(dve palačinke)</span></div></td><td class="pr">280 din</td></tr>
+                <tr><td><div class="menuName">Oblatne <span class="sub">sa kakao i kokos kremom</span></div></td><td class="pr">100 din</td></tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
@@ -641,9 +788,10 @@
               </div>
 
               <label for="note">Napomena (opciono)</label>
-              <textarea id="note" name="note" placeholder="Npr: bez luka, ljuto, vreme dostave..."></textarea>
+              <textarea id="note" name="note" placeholder="Npr: bez luka, ljuto, vreme dostave, porudžbina iz kuvanih jela / pohovanih / oval..."></textarea>
 
               <div class="hint">
+                <strong>Dostava:</strong> besplatna za porudžbine od <strong>1000 din</strong> (do <strong>5 km</strong>). Ispod 1000 din, dostava <strong>260 din</strong>. <br><br>
                 <strong>Plaćanje:</strong> pouzećem (kada stigne dostava) ili prilikom preuzimanja. <br>
                 Klik na dugme šalje poruku na <strong>Viber 061 6856590</strong>.
               </div>
@@ -729,6 +877,7 @@
       lines.push("");
       lines.push(data.note ? `Napomena: ${data.note}` : "Napomena: (nema)");
       lines.push("");
+      lines.push("Dostava: besplatna od 1000 din (do 5 km); ispod 1000 din = 260 din.");
       lines.push("Plaćanje: pouzećem ili preuzimanje.");
       return lines.join("\n");
     }
