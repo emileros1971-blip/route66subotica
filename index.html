@@ -226,7 +226,7 @@
     .priceBar strong{color:var(--yellow)}
     .priceBar span{color:var(--muted); font-size: 12px}
 
-    /* Tables (pizza + other menus) */
+    /* Tables (other menus) */
     .menuTable{
       width:100%;
       border-collapse: collapse;
@@ -266,21 +266,6 @@
       font-weight: 900;
       color: var(--yellow);
       text-align:right;
-    }
-
-    .pillList{
-      margin-top:10px;
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-    }
-    .pill{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
     }
 
     /* Order form */
@@ -416,155 +401,38 @@
             <div class="dailyList" id="dailyMenu">
               <div class="day">
                 <div class="dayTop"><div class="dayName">Ponedeljak</div></div>
-                <div class="dayItems">Čorba od povrća, fašir, pire krompir, varivo</div>
+                <div class="dayItems">Čorba od povrća, kentaki piletina, pečeni krompir, salata</div>
               </div>
 
               <div class="day">
                 <div class="dayTop"><div class="dayName">Utorak</div></div>
-                <div class="dayItems">Čorba od boranije, pariska šnicla, pečeni krompir, salata</div>
+                <div class="dayItems">Krompir čorba, svinjski vrat, pire krompir, varivo</div>
               </div>
 
               <div class="day">
                 <div class="dayTop"><div class="dayName">Sreda</div></div>
-                <div class="dayItems">Bistra supa, perkelt na naš način, pire krompir, turšija</div>
+                <div class="dayItems">Bistra supa, pariska šnicla, restovani krompir, varivo</div>
               </div>
 
               <div class="day">
                 <div class="dayTop"><div class="dayName">Četvrtak</div></div>
-                <div class="dayItems">Ragu čorba, špagete karbonara, salata</div>
+                <div class="dayItems">Ragu čorba, giros, pomfrit, salata</div>
               </div>
 
               <div class="day">
                 <div class="dayTop"><div class="dayName">Petak</div></div>
-                <div class="dayItems">Paradajz čorba, mešano meso, pomfrit, salata</div>
+                <div class="dayItems">Supa od povrća, mešano meso, pomfrit, salata</div>
               </div>
 
               <div class="day">
                 <div class="dayTop"><div class="dayName">Subota</div></div>
-                <div class="dayItems">Bistra supa, bečka šnicla, pire krompir, salata</div>
+                <div class="dayItems">Pasulj čorba, pileći pečeni batak, pire krompir, varivo</div>
               </div>
             </div>
 
             <div class="priceBar">
               <div><strong>Cena dnevnog menija:</strong> 600 din</div>
-              <span>Uključuje: supa, glavno jelo, prilozi, hleb</span>
-            </div>
-
-            <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:16px 0;">
-
-            <div class="sectionTitle">Cenovnik pizza (Ø 30cm – Ø 50cm)</div>
-
-            <table class="menuTable" aria-label="Cenovnik pizza">
-              <thead>
-                <tr>
-                  <th>Pizza</th>
-                  <th style="text-align:right;">Cena</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="menuName">1. Pizza sa sirom</div>
-                    <div class="sub">kečap, sir</div>
-                  </td>
-                  <td class="pr">650 – 1400 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">2. Pizza sa šunkom</div>
-                    <div class="sub">kečap, sir, šunka</div>
-                  </td>
-                  <td class="pr">700 – 1500 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">3. Pizza sa gljivama</div>
-                    <div class="sub">kečap, sir, šunka, gljive</div>
-                  </td>
-                  <td class="pr">730 – 1550 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">4. Pizza mešana</div>
-                    <div class="sub">kečap, sir, šunka, gljive, paprika</div>
-                  </td>
-                  <td class="pr">730 – 1550 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">5. Pizza 4 godišnja doba</div>
-                    <div class="sub">kečap, sir, šunka, gljive, kukuruz, paprika-gljive, kulen</div>
-                  </td>
-                  <td class="pr">750 – 1600 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">6. Pizza sa pečenicom</div>
-                    <div class="sub">kečap, sir, šunka, pečenica, ajvar, pavlaka</div>
-                  </td>
-                  <td class="pr">750 – 1650 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">7. Pizza sa slaninom</div>
-                    <div class="sub">kečap, sir, šunka, gljive, slanina, luk</div>
-                  </td>
-                  <td class="pr">750 – 1650 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">8. Pizza domaća</div>
-                    <div class="sub">kečap, sir, šunka, kulen, jaje, paprika</div>
-                  </td>
-                  <td class="pr">750 – 1650 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">9. Pizza srpska</div>
-                    <div class="sub">kečap, sir, šunka, kulen, pečenica, crni luk, pavlaka</div>
-                  </td>
-                  <td class="pr">750 – 1650 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">10. Pizza sa piletinom</div>
-                    <div class="sub">kečap, sir, pileće belo, paradajz, pavlaka</div>
-                  </td>
-                  <td class="pr">750 – 1650 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">11. Pizza sa kukuruzom</div>
-                    <div class="sub">pavlaka, šunka, sir, kukuruz</div>
-                  </td>
-                  <td class="pr">730 – 1550 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">12. Pizza sa ananasom</div>
-                    <div class="sub">pavlaka, sir, šunka, ananas</div>
-                  </td>
-                  <td class="pr">750 – 1600 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">13. Pizza vegetarijanska</div>
-                    <div class="sub">kečap, sir, gljive, kukuruz, paprika, masline</div>
-                  </td>
-                  <td class="pr">700 – 1500 din</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="menuName">14. Pizza Route</div>
-                    <div class="sub">kečap, sir, šunka, gljive, kulen, pečenica, jaje, paprika, pavlaka</div>
-                  </td>
-                  <td class="pr">800 – 1700 din</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="hint" style="margin-top:12px;">
-              <strong>Napomena:</strong> Cene su prikazane kao raspon (30cm–50cm) kao na meniju. Tačnu veličinu birate u porudžbini.
+              <span>Uključuje: supa/čorba, glavno jelo, prilozi, hleb</span>
             </div>
 
             <hr style="border:0;border-top:1px solid rgba(255,255,255,.08); margin:18px 0;">
@@ -727,12 +595,12 @@
                   <label for="dailyDay">Dnevni meni (opciono)</label>
                   <select id="dailyDay" name="dailyDay">
                     <option value="">Ne poručujem dnevni meni</option>
-                    <option value="Ponedeljak – Čorba od povrća, fašir, pire krompir, varivo">Ponedeljak (600 din)</option>
-                    <option value="Utorak – Čorba od boranije, pariska šnicla, pečeni krompir, salata">Utorak (600 din)</option>
-                    <option value="Sreda – Bistra supa, perkelt na naš način, pire krompir, turšija">Sreda (600 din)</option>
-                    <option value="Četvrtak – Ragu čorba, špagete karbonara, salata">Četvrtak (600 din)</option>
-                    <option value="Petak – Paradajz čorba, mešano meso, pomfrit, salata">Petak (600 din)</option>
-                    <option value="Subota – Bistra supa, bečka šnicla, pire krompir, salata">Subota (600 din)</option>
+                    <option value="Ponedeljak – Čorba od povrća, kentaki piletina, pečeni krompir, salata">Ponedeljak (600 din)</option>
+                    <option value="Utorak – Krompir čorba, svinjski vrat, pire krompir, varivo">Utorak (600 din)</option>
+                    <option value="Sreda – Bistra supa, pariska šnicla, restovani krompir, varivo">Sreda (600 din)</option>
+                    <option value="Četvrtak – Ragu čorba, giros, pomfrit, salata">Četvrtak (600 din)</option>
+                    <option value="Petak – Supa od povrća, mešano meso, pomfrit, salata">Petak (600 din)</option>
+                    <option value="Subota – Pasulj čorba, pileći pečeni batak, pire krompir, varivo">Subota (600 din)</option>
                   </select>
                 </div>
 
@@ -748,46 +616,7 @@
                 </div>
               </div>
 
-              <label for="pizza">Pizza (opciono)</label>
-              <select id="pizza" name="pizza">
-                <option value="">Ne poručujem pizzu</option>
-                <option value="Pizza sa sirom">1. Pizza sa sirom</option>
-                <option value="Pizza sa šunkom">2. Pizza sa šunkom</option>
-                <option value="Pizza sa gljivama">3. Pizza sa gljivama</option>
-                <option value="Pizza mešana">4. Pizza mešana</option>
-                <option value="Pizza 4 godišnja doba">5. Pizza 4 godišnja doba</option>
-                <option value="Pizza sa pečenicom">6. Pizza sa pečenicom</option>
-                <option value="Pizza sa slaninom">7. Pizza sa slaninom</option>
-                <option value="Pizza domaća">8. Pizza domaća</option>
-                <option value="Pizza srpska">9. Pizza srpska</option>
-                <option value="Pizza sa piletinom">10. Pizza sa piletinom</option>
-                <option value="Pizza sa kukuruzom">11. Pizza sa kukuruzom</option>
-                <option value="Pizza sa ananasom">12. Pizza sa ananasom</option>
-                <option value="Pizza vegetarijanska">13. Pizza vegetarijanska</option>
-                <option value="Pizza Route">14. Pizza Route</option>
-              </select>
-
-              <div class="choiceGrid">
-                <div>
-                  <label for="size">Veličina</label>
-                  <select id="size" name="size">
-                    <option value="30cm">30cm</option>
-                    <option value="50cm">50cm</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="pizzaQty">Količina (pizza)</label>
-                  <select id="pizzaQty" name="pizzaQty">
-                    <option value="0">0</option>
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                </div>
-              </div>
-
-              <label for="note">Napomena (opciono)</label>
+              <label for="note">Napomena / ostalo (opciono)</label>
               <textarea id="note" name="note" placeholder="Npr: bez luka, ljuto, vreme dostave, porudžbina iz kuvanih jela / pohovanih / oval..."></textarea>
 
               <div class="hint">
@@ -865,13 +694,8 @@
         lines.push(`- Dnevni meni (${data.dailyQty}x): ${data.dailyDay} (600 din/kom)`);
       }
 
-      // Pizza
-      if (data.pizza && data.pizzaQty > 0){
-        lines.push(`- Pizza (${data.pizzaQty}x): ${data.pizza} – ${data.size}`);
-      }
-
-      if ((!data.dailyDay || data.dailyQty === 0) && (!data.pizza || data.pizzaQty === 0)){
-        lines.push("- (Nije izabrano ništa. Molimo napišite šta poručujete.)");
+      if ((!data.dailyDay || data.dailyQty === 0) && !data.note){
+        lines.push("- (Nije izabrano ništa. Molimo napišite u napomeni šta poručujete.)");
       }
 
       lines.push("");
@@ -894,9 +718,6 @@
         address: f.address.value.trim(),
         dailyDay: f.dailyDay.value,
         dailyQty: parseInt(f.dailyQty.value, 10) || 0,
-        pizza: f.pizza.value,
-        size: f.size.value,
-        pizzaQty: parseInt(f.pizzaQty.value, 10) || 0,
         note: f.note.value.trim()
       };
 
