@@ -355,6 +355,47 @@
 
     .hint strong{color:var(--yellow)}
 
+    .summaryBox{
+      margin-top:14px;
+      border:1px solid rgba(255,210,0,.22);
+      background:rgba(255,210,0,.06);
+      border-radius:14px;
+      padding:12px;
+    }
+
+    .summaryTitle{
+      font-size:12px;
+      font-weight:900;
+      color:var(--yellow);
+      text-transform:uppercase;
+      margin-bottom:8px;
+      letter-spacing:.2px;
+    }
+
+    .summaryList{
+      display:grid;
+      gap:8px;
+      font-size:13px;
+    }
+
+    .summaryItem{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      border-bottom:1px dashed rgba(255,255,255,.08);
+      padding-bottom:6px;
+    }
+
+    .summaryItem:last-child{
+      border-bottom:0;
+      padding-bottom:0;
+    }
+
+    .summaryEmpty{
+      font-size:13px;
+      color:var(--muted);
+    }
+
     .submitRow{
       display:flex;
       gap:10px;
@@ -475,12 +516,7 @@
                 <div class="dayItems">Kim čorba, kobasica sa boranijom, desert</div>
                 <label for="qty-dnevni-pon">Količina</label>
                 <select class="qty menu-qty" id="qty-dnevni-pon" data-name="Dnevni meni - Ponedeljak: Kim čorba, kobasica sa boranijom, desert" data-price="600 din">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
 
@@ -489,12 +525,7 @@
                 <div class="dayItems">Krompir čorba, piletina sa pečurkama u pavlaci sa testeninom, desert</div>
                 <label for="qty-dnevni-uto">Količina</label>
                 <select class="qty menu-qty" id="qty-dnevni-uto" data-name="Dnevni meni - Utorak: Krompir čorba, piletina sa pečurkama u pavlaci sa testeninom, desert" data-price="600 din">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
 
@@ -503,12 +534,7 @@
                 <div class="dayItems">Čorba od graška, fašir, krompir varivo, desert</div>
                 <label for="qty-dnevni-sre">Količina</label>
                 <select class="qty menu-qty" id="qty-dnevni-sre" data-name="Dnevni meni - Sreda: Čorba od graška, fašir, krompir varivo, desert" data-price="600 din">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
 
@@ -517,12 +543,7 @@
                 <div class="dayItems">Ragu čorba, giros, pomfrit, salata</div>
                 <label for="qty-dnevni-cet">Količina</label>
                 <select class="qty menu-qty" id="qty-dnevni-cet" data-name="Dnevni meni - Četvrtak: Ragu čorba, giros, pomfrit, salata" data-price="600 din">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
 
@@ -531,12 +552,7 @@
                 <div class="dayItems">Pasulj čorba, mešano meso, pomfrit, salata</div>
                 <label for="qty-dnevni-pet">Količina</label>
                 <select class="qty menu-qty" id="qty-dnevni-pet" data-name="Dnevni meni - Petak: Pasulj čorba, mešano meso, pomfrit, salata" data-price="600 din">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
 
@@ -545,12 +561,7 @@
                 <div class="dayItems">Čorba od povrća, pileći batak, pire krompir, salata</div>
                 <label for="qty-dnevni-sub">Količina</label>
                 <select class="qty menu-qty" id="qty-dnevni-sub" data-name="Dnevni meni - Subota: Čorba od povrća, pileći batak, pire krompir, salata" data-price="600 din">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
             </div>
@@ -563,11 +574,7 @@
             <div class="sectionTitle" style="margin-top:18px;">Kuvana jela (mala / velika porcija)</div>
             <table class="menuTable">
               <thead>
-                <tr>
-                  <th>Jelo</th>
-                  <th>Cena</th>
-                  <th class="qtyCell">Količina</th>
-                </tr>
+                <tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
                 <tr><td><div class="menuName">Tarana sa srpskom kobasicom</div></td><td class="pr">410 / 540 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Tarana sa srpskom kobasicom" data-price="410 / 540 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
@@ -584,11 +591,7 @@
             <div class="sectionTitle">Pohovani obroci u porciji</div>
             <table class="menuTable">
               <thead>
-                <tr>
-                  <th>Jelo</th>
-                  <th>Cena</th>
-                  <th class="qtyCell">Količina</th>
-                </tr>
+                <tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
                 <tr><td><div class="menuName">Bečka šnicla sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Bečka šnicla sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
@@ -603,11 +606,7 @@
             <div class="sectionTitle">Pečeni obroci u porciji</div>
             <table class="menuTable">
               <thead>
-                <tr>
-                  <th>Jelo</th>
-                  <th>Cena</th>
-                  <th class="qtyCell">Količina</th>
-                </tr>
+                <tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
                 <tr><td><div class="menuName">Pileća krilca sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pileća krilca sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
@@ -633,11 +632,7 @@
             <div class="sectionTitle" style="margin-top:18px;">Salate i dodaci</div>
             <table class="menuTable">
               <thead>
-                <tr>
-                  <th>Stavka</th>
-                  <th>Cena</th>
-                  <th class="qtyCell">Količina</th>
-                </tr>
+                <tr><th>Stavka</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
                 <tr><td><div class="menuName">Cezar salata</div></td><td class="pr">450 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Cezar salata" data-price="450 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
@@ -648,11 +643,7 @@
             <div class="sectionTitle">Ovali</div>
             <table class="menuTable">
               <thead>
-                <tr>
-                  <th>Oval</th>
-                  <th>Cena</th>
-                  <th class="qtyCell">Količina</th>
-                </tr>
+                <tr><th>Oval</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
                 <tr><td><div class="menuName">Pohovani oval</div><div class="sub">(3–4 osobe)</div></td><td class="pr">2500 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pohovani oval (3–4 osobe)" data-price="2500 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option></select></td></tr>
@@ -665,11 +656,7 @@
             <div class="sectionTitle">Deserti</div>
             <table class="menuTable">
               <thead>
-                <tr>
-                  <th>Desert</th>
-                  <th>Cena</th>
-                  <th class="qtyCell">Količina</th>
-                </tr>
+                <tr><th>Desert</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
                 <tr><td><div class="menuName">Palačinke sa nutelom/kajsijom</div><div class="sub">(dve palačinke)</div></td><td class="pr">280 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Palačinke sa nutelom/kajsijom (dve palačinke)" data-price="280 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
@@ -691,6 +678,7 @@
               <input type="hidden" name="subject" value="Nova porudžbina - Route 66">
               <input type="hidden" name="from_name" value="Route 66 Subotica sajt">
               <input type="hidden" name="message" id="messageField">
+              <input type="hidden" name="replyto" value="emileros1971@gmail.com">
               <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none;">
 
               <div class="row">
@@ -706,7 +694,7 @@
 
               <div class="row">
                 <div>
-                  <label for="email">Email (opciono)</label>
+                  <label for="email">Email kupca (opciono)</label>
                   <input id="email" name="email" type="email" autocomplete="email" placeholder="Npr. ime@gmail.com">
                 </div>
                 <div>
@@ -724,10 +712,17 @@
               <label for="note">Napomena / ostalo (opciono)</label>
               <textarea id="note" name="note" placeholder="Npr: bez luka, ljuto, vreme dostave, dodatni prilozi, posebna napomena..."></textarea>
 
+              <div class="summaryBox">
+                <div class="summaryTitle">Pregled porudžbine</div>
+                <div id="orderPreview" class="summaryList">
+                  <div class="summaryEmpty">Još ništa nije izabrano.</div>
+                </div>
+              </div>
+
               <div class="hint">
                 <strong>Dostava:</strong> besplatna za porudžbine od <strong>1000 din</strong> (do <strong>5 km</strong>). Ispod 1000 din, dostava <strong>260 din</strong>.<br><br>
                 <strong>Plaćanje:</strong> pouzećem ili prilikom preuzimanja.<br>
-                Izabrane stavke sa količinama biće automatski poslate u porudžbini.
+                Sve izabrane stavke iz pregleda biće poslate u porudžbini.
               </div>
 
               <div class="submitRow">
@@ -736,7 +731,7 @@
               </div>
 
               <div class="mini">
-                Porudžbina se šalje direktno sa sajta na email restorana.
+                Porudžbina se šalje direktno sa sajta preko Web3Forms.
               </div>
 
               <div id="formStatus" class="status" aria-live="polite"></div>
@@ -765,6 +760,8 @@
     const messageField = document.getElementById("messageField");
     const pickupField = document.getElementById("pickup");
     const addressField = document.getElementById("address");
+    const orderPreview = document.getElementById("orderPreview");
+    const qtySelects = document.querySelectorAll(".menu-qty");
 
     function setError(message) {
       formStatus.textContent = message;
@@ -777,10 +774,9 @@
     }
 
     function getSelectedItems() {
-      const selects = document.querySelectorAll(".menu-qty");
       const items = [];
 
-      selects.forEach(select => {
+      qtySelects.forEach(select => {
         const qty = parseInt(select.value, 10) || 0;
         if (qty > 0) {
           items.push({
@@ -794,6 +790,22 @@
       return items;
     }
 
+    function renderPreview() {
+      const items = getSelectedItems();
+
+      if (items.length === 0) {
+        orderPreview.innerHTML = '<div class="summaryEmpty">Još ništa nije izabrano.</div>';
+        return;
+      }
+
+      orderPreview.innerHTML = items.map(item => `
+        <div class="summaryItem">
+          <div>${item.qty}x ${item.name}</div>
+          <div>${item.price}</div>
+        </div>
+      `).join("");
+    }
+
     function buildOrderMessage(data, items) {
       const lines = [
         "ROUTE 66 - PORUDŽBINA",
@@ -801,7 +813,7 @@
         "PODACI KUPCA",
         `Ime: ${data.name}`,
         `Telefon: ${data.phone}`,
-        `Email: ${data.email || "(nije naveden)"}`,
+        `Email kupca: ${data.email || "(nije naveden)"}`,
         `Način: ${data.pickup}`,
         `Adresa: ${data.address || "(nije navedena)"}`,
         "",
@@ -820,6 +832,10 @@
 
       return lines.join("\n");
     }
+
+    qtySelects.forEach(select => {
+      select.addEventListener("change", renderPreview);
+    });
 
     form.addEventListener("submit", function(e) {
       clearError();
@@ -867,6 +883,8 @@
         addressField.value = "";
       }
     });
+
+    renderPreview();
   </script>
 </body>
 </html>
