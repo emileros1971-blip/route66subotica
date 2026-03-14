@@ -415,6 +415,11 @@
       box-shadow:0 14px 28px rgba(0,0,0,.35);
     }
 
+    .submitRow button:disabled{
+      opacity:.7;
+      cursor:not-allowed;
+    }
+
     .mini{
       margin-top:10px;
       font-size:12px;
@@ -437,6 +442,12 @@
       background:rgba(255,90,90,.10);
       border:1px solid rgba(255,90,90,.28);
       color:#ffb3b3;
+    }
+
+    .status.ok{
+      background:rgba(36,210,122,.10);
+      border:1px solid rgba(36,210,122,.28);
+      color:#9cf0c3;
     }
 
     .sticky{
@@ -577,14 +588,14 @@
                 <tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
-                <tr><td><div class="menuName">Tarana sa srpskom kobasicom</div></td><td class="pr">410 / 540 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Tarana sa srpskom kobasicom" data-price="410 / 540 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Piletina u sosu od pavlake</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Piletina u sosu od pavlake" data-price="440 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Pasulj sa butkicom</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pasulj sa butkicom" data-price="440 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Slatki kupus sa butkicom</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Slatki kupus sa butkicom" data-price="440 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Ćufte u paradajz sosu</div></td><td class="pr">470 / 620 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Ćufte u paradajz sosu" data-price="470 / 620 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Gulaš od svinjskog mesa</div></td><td class="pr">470 / 630 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Gulaš od svinjskog mesa" data-price="470 / 630 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Sarma / punjena paprika</div></td><td class="pr">470 / 650 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Sarma / punjena paprika" data-price="470 / 650 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Špagete bolognese</div></td><td class="pr">450 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Špagete bolognese" data-price="450 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+                <tr><td><div class="menuName">Tarana sa srpskom kobasicom</div></td><td class="pr">410 / 540 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Tarana sa srpskom kobasicom" data-price="410 / 540 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Piletina u sosu od pavlake</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Piletina u sosu od pavlake" data-price="440 / 610 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Pasulj sa butkicom</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pasulj sa butkicom" data-price="440 / 610 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Slatki kupus sa butkicom</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Slatki kupus sa butkicom" data-price="440 / 610 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Ćufte u paradajz sosu</div></td><td class="pr">470 / 620 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Ćufte u paradajz sosu" data-price="470 / 620 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Gulaš od svinjskog mesa</div></td><td class="pr">470 / 630 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Gulaš od svinjskog mesa" data-price="470 / 630 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Sarma / punjena paprika</div></td><td class="pr">470 / 650 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Sarma / punjena paprika" data-price="470 / 650 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Špagete bolognese</div></td><td class="pr">450 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Špagete bolognese" data-price="450 / 610 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
               </tbody>
             </table>
 
@@ -594,12 +605,12 @@
                 <tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
-                <tr><td><div class="menuName">Bečka šnicla sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Bečka šnicla sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Karađorđeva šnicla sa prilozima</div></td><td class="pr">500 / 650 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Karađorđeva šnicla sa prilozima" data-price="500 / 650 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Pileći štapići sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pileći štapići sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Pileći štapići (med, med senf, caciki) sa prilozima</div></td><td class="pr">470 / 640 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pileći štapići (med, med senf, caciki) sa prilozima" data-price="470 / 640 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Pohovani sir sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pohovani sir sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Pohovana punjena palačinka sa prilozima</div></td><td class="pr">560 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pohovana punjena palačinka sa prilozima" data-price="560 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+                <tr><td><div class="menuName">Bečka šnicla sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Bečka šnicla sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Karađorđeva šnicla sa prilozima</div></td><td class="pr">500 / 650 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Karađorđeva šnicla sa prilozima" data-price="500 / 650 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Pileći štapići sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pileći štapići sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Pileći štapići (med, med senf, caciki) sa prilozima</div></td><td class="pr">470 / 640 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pileći štapići (med, med senf, caciki) sa prilozima" data-price="470 / 640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Pohovani sir sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pohovani sir sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Pohovana punjena palačinka sa prilozima</div></td><td class="pr">560 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pohovana punjena palačinka sa prilozima" data-price="560 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
               </tbody>
             </table>
 
@@ -609,19 +620,19 @@
                 <tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
-                <tr><td><div class="menuName">Pileća krilca sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pileća krilca sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Pileća krilca (med, med senf, caciki) sa prilozima</div></td><td class="pr">470 / 640 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pileća krilca (med, med senf, caciki) sa prilozima" data-price="470 / 640 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Grilovano belo meso sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Grilovano belo meso sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Grilovano belo sa sirom i prilozima</div></td><td class="pr">470 / 630 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Grilovano belo sa sirom i prilozima" data-price="470 / 630 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Texas piletina sa prilozima</div></td><td class="pr">500 / 660 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Texas piletina sa prilozima" data-price="500 / 660 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Kanzas piletina sa prilozima</div></td><td class="pr">500 / 660 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Kanzas piletina sa prilozima" data-price="500 / 660 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Mexico piletina sa prilozima</div></td><td class="pr">520 / 680 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Mexico piletina sa prilozima" data-price="520 / 680 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Pečeni pileći batak sa prilozima</div></td><td class="pr">540 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pečeni pileći batak sa prilozima" data-price="540 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Pečena slanina sa prilozima</div></td><td class="pr">550 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pečena slanina sa prilozima" data-price="550 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Fašir sa prilozima</div></td><td class="pr">530 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Fašir sa prilozima" data-price="530 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Pečena kobasica sa prilozima</div></td><td class="pr">540 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pečena kobasica sa prilozima" data-price="540 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Pljeskavica u porciji sa prilozima</div></td><td class="pr">500 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pljeskavica u porciji sa prilozima" data-price="500 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Ćevapi u porciji sa prilozima</div></td><td class="pr">500 / 900 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Ćevapi u porciji sa prilozima" data-price="500 / 900 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+                <tr><td><div class="menuName">Pileća krilca sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pileća krilca sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Pileća krilca (med, med senf, caciki) sa prilozima</div></td><td class="pr">470 / 640 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pileća krilca (med, med senf, caciki) sa prilozima" data-price="470 / 640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Grilovano belo meso sa prilozima</div></td><td class="pr">440 / 610 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Grilovano belo meso sa prilozima" data-price="440 / 610 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Grilovano belo sa sirom i prilozima</div></td><td class="pr">470 / 630 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Grilovano belo sa sirom i prilozima" data-price="470 / 630 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Texas piletina sa prilozima</div></td><td class="pr">500 / 660 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Texas piletina sa prilozima" data-price="500 / 660 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Kanzas piletina sa prilozima</div></td><td class="pr">500 / 660 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Kanzas piletina sa prilozima" data-price="500 / 660 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Mexico piletina sa prilozima</div></td><td class="pr">520 / 680 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Mexico piletina sa prilozima" data-price="520 / 680 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Pečeni pileći batak sa prilozima</div></td><td class="pr">540 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pečeni pileći batak sa prilozima" data-price="540 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Pečena slanina sa prilozima</div></td><td class="pr">550 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pečena slanina sa prilozima" data-price="550 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Fašir sa prilozima</div></td><td class="pr">530 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Fašir sa prilozima" data-price="530 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Pečena kobasica sa prilozima</div></td><td class="pr">540 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pečena kobasica sa prilozima" data-price="540 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Pljeskavica u porciji sa prilozima</div></td><td class="pr">500 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pljeskavica u porciji sa prilozima" data-price="500 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Ćevapi u porciji sa prilozima</div></td><td class="pr">500 / 900 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Ćevapi u porciji sa prilozima" data-price="500 / 900 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
               </tbody>
             </table>
 
@@ -635,8 +646,8 @@
                 <tr><th>Stavka</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
-                <tr><td><div class="menuName">Cezar salata</div></td><td class="pr">450 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Cezar salata" data-price="450 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Sos od višnje</div></td><td class="pr">140 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Sos od višnje" data-price="140 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+                <tr><td><div class="menuName">Cezar salata</div></td><td class="pr">450 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Cezar salata" data-price="450 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Sos od višnje</div></td><td class="pr">140 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Sos od višnje" data-price="140 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
               </tbody>
             </table>
 
@@ -646,10 +657,10 @@
                 <tr><th>Oval</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
-                <tr><td><div class="menuName">Pohovani oval</div><div class="sub">(3–4 osobe)</div></td><td class="pr">2500 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pohovani oval (3–4 osobe)" data-price="2500 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option></select></td></tr>
-                <tr><td><div class="menuName">Mix oval</div><div class="sub">(3–4 osobe)</div></td><td class="pr">2500 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Mix oval (3–4 osobe)" data-price="2500 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option></select></td></tr>
-                <tr><td><div class="menuName">Route oval mali</div><div class="sub">(2–3 osobe)</div></td><td class="pr">2000 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Route oval mali (2–3 osobe)" data-price="2000 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option></select></td></tr>
-                <tr><td><div class="menuName">Route oval veliki</div><div class="sub">(5–7 osoba)</div></td><td class="pr">3900 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Route oval veliki (5–7 osoba)" data-price="3900 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option></select></td></tr>
+                <tr><td><div class="menuName">Pohovani oval</div><div class="sub">(3–4 osobe)</div></td><td class="pr">2500 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Pohovani oval (3–4 osobe)" data-price="2500 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td></tr>
+                <tr><td><div class="menuName">Mix oval</div><div class="sub">(3–4 osobe)</div></td><td class="pr">2500 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Mix oval (3–4 osobe)" data-price="2500 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td></tr>
+                <tr><td><div class="menuName">Route oval mali</div><div class="sub">(2–3 osobe)</div></td><td class="pr">2000 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Route oval mali (2–3 osobe)" data-price="2000 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td></tr>
+                <tr><td><div class="menuName">Route oval veliki</div><div class="sub">(5–7 osoba)</div></td><td class="pr">3900 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Route oval veliki (5–7 osoba)" data-price="3900 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td></tr>
               </tbody>
             </table>
 
@@ -659,8 +670,8 @@
                 <tr><th>Desert</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
               </thead>
               <tbody>
-                <tr><td><div class="menuName">Palačinke sa nutelom/kajsijom</div><div class="sub">(dve palačinke)</div></td><td class="pr">280 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Palačinke sa nutelom/kajsijom (dve palačinke)" data-price="280 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                <tr><td><div class="menuName">Oblatne</div><div class="sub">sa kakao i kokos kremom</div></td><td class="pr">100 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Oblatne sa kakao i kokos kremom" data-price="100 din"><option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+                <tr><td><div class="menuName">Palačinke sa nutelom/kajsijom</div><div class="sub">(dve palačinke)</div></td><td class="pr">280 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Palačinke sa nutelom/kajsijom (dve palačinke)" data-price="280 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
+                <tr><td><div class="menuName">Oblatne</div><div class="sub">sa kakao i kokos kremom</div></td><td class="pr">100 din</td><td class="qtyCell"><select class="qty menu-qty" data-name="Oblatne sa kakao i kokos kremom" data-price="100 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
               </tbody>
             </table>
           </div>
@@ -674,7 +685,7 @@
 
           <div class="bd">
             <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="f8302aa4-22de-4443-b27b-0eb5da1e982e">
+              <input type="hidden" name="access_key" value="cbfd0333-5bad-45ad-b0f3-6fb64af0b6d1">
               <input type="hidden" name="subject" value="Nova porudžbina - Route 66">
               <input type="hidden" name="from_name" value="Route 66 Subotica sajt">
               <input type="hidden" name="message" id="messageField">
@@ -726,7 +737,7 @@
               </div>
 
               <div class="submitRow">
-                <button type="submit">Pošalji porudžbinu</button>
+                <button type="submit" id="submitBtn">Pošalji porudžbinu</button>
                 <a class="btn" href="tel:+381616856590">Pozovi</a>
               </div>
 
@@ -762,13 +773,14 @@
     const addressField = document.getElementById("address");
     const orderPreview = document.getElementById("orderPreview");
     const qtySelects = document.querySelectorAll(".menu-qty");
+    const submitBtn = document.getElementById("submitBtn");
 
-    function setError(message) {
+    function setStatus(message, type = "err") {
       formStatus.textContent = message;
-      formStatus.className = "status show err";
+      formStatus.className = "status show " + type;
     }
 
-    function clearError() {
+    function clearStatus() {
       formStatus.textContent = "";
       formStatus.className = "status";
     }
@@ -837,8 +849,15 @@
       select.addEventListener("change", renderPreview);
     });
 
-    form.addEventListener("submit", function(e) {
-      clearError();
+    pickupField.addEventListener("change", function() {
+      if (pickupField.value === "Lično preuzimanje") {
+        addressField.value = "";
+      }
+    });
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      clearStatus();
 
       const data = {
         name: document.getElementById("name").value.trim(),
@@ -852,35 +871,53 @@
       const items = getSelectedItems();
 
       if (!data.name) {
-        e.preventDefault();
-        setError("Unesite ime i prezime.");
+        setStatus("Unesite ime i prezime.");
         return;
       }
 
       if (!data.phone) {
-        e.preventDefault();
-        setError("Unesite broj telefona.");
+        setStatus("Unesite broj telefona.");
         return;
       }
 
       if (data.pickup === "Dostava" && !data.address) {
-        e.preventDefault();
-        setError("Unesite adresu za dostavu.");
+        setStatus("Unesite adresu za dostavu.");
         return;
       }
 
       if (items.length === 0) {
-        e.preventDefault();
-        setError("Izaberite bar jednu stavku iz menija.");
+        setStatus("Izaberite bar jednu stavku iz menija.");
         return;
       }
 
       messageField.value = buildOrderMessage(data, items);
-    });
 
-    pickupField.addEventListener("change", function() {
-      if (pickupField.value === "Lično preuzimanje") {
-        addressField.value = "";
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Slanje...";
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          setStatus("Porudžbina je uspešno poslata.", "ok");
+          form.reset();
+          qtySelects.forEach(select => select.value = "0");
+          renderPreview();
+        } else {
+          setStatus("Greška pri slanju: " + (result.message || "Pokušajte ponovo."));
+        }
+      } catch (error) {
+        setStatus("Došlo je do greške pri slanju. Proverite internet vezu i pokušajte ponovo.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Pošalji porudžbinu";
       }
     });
 
