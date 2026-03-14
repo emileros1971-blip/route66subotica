@@ -331,13 +331,7 @@
     }
     .submitRow button:hover{transform:translateY(-1px)}
     .submitRow button:active{transform:translateY(1px)}
-    .submitRow button:disabled,
-    .btn[aria-disabled="true"]{
-      opacity:.7;
-      cursor:not-allowed;
-    }
     .mini{margin-top:10px; font-size:12px; color: var(--muted);}
-
     .status{
       margin-top:12px;
       padding:10px 12px;
@@ -348,11 +342,6 @@
       line-height:1.45;
     }
     .status.show{display:block}
-    .status.ok{
-      background: rgba(36,210,122,.12);
-      border:1px solid rgba(36,210,122,.35);
-      color:#9df0c0;
-    }
     .status.err{
       background: rgba(255,90,90,.10);
       border:1px solid rgba(255,90,90,.28);
@@ -596,11 +585,11 @@
           </div>
 
           <div class="bd">
-            <form id="orderForm" novalidate>
+            <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="f8302aa4-22de-4443-b27b-0eb5da1e982e">
               <input type="hidden" name="subject" value="Nova porudžbina - Route 66">
               <input type="hidden" name="from_name" value="Route 66 Subotica sajt">
-              <input type="hidden" name="replyto" value="route66domacakuhinja@gmail.com">
+              <input type="hidden" name="message" id="messageField">
               <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none;">
 
               <div class="row">
@@ -614,11 +603,19 @@
                 </div>
               </div>
 
-              <label for="pickup">Način</label>
-              <select id="pickup" name="pickup" required>
-                <option value="Dostava">Dostava</option>
-                <option value="Lično preuzimanje">Lično preuzimanje</option>
-              </select>
+              <div class="row">
+                <div>
+                  <label for="email">Email (opciono)</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="Npr. ime@gmail.com">
+                </div>
+                <div>
+                  <label for="pickup">Način</label>
+                  <select id="pickup" name="pickup" required>
+                    <option value="Dostava">Dostava</option>
+                    <option value="Lično preuzimanje">Lično preuzimanje</option>
+                  </select>
+                </div>
+              </div>
 
               <label for="address">Adresa (ako je dostava)</label>
               <input id="address" name="address" autocomplete="street-address" placeholder="Ulica i broj, sprat, interfon...">
@@ -654,12 +651,12 @@
 
               <div class="hint">
                 <strong>Dostava:</strong> besplatna za porudžbine od <strong>1000 din</strong> (do <strong>5 km</strong>). Ispod 1000 din, dostava <strong>260 din</strong>.<br><br>
-                <strong>Plaćanje:</strong> pouzećem (kada stigne dostava) ili prilikom preuzimanja.<br>
+                <strong>Plaćanje:</strong> pouzećem ili prilikom preuzimanja.<br>
                 Klik na dugme šalje porudžbinu direktno na email restorana.
               </div>
 
               <div class="submitRow">
-                <button type="submit" id="submitBtn">Pošalji porudžbinu</button>
+                <button type="submit">Pošalji porudžbinu</button>
                 <a class="btn" href="tel:+381616856590">Pozovi</a>
               </div>
 
@@ -689,12 +686,13 @@
     document.getElementById("y").textContent = new Date().getFullYear();
 
     const form = document.getElementById("orderForm");
-    const submitBtn = document.getElementById("submitBtn");
     const formStatus = document.getElementById("formStatus");
+    const messageField = document.getElementById("messageField");
 
     const fields = {
       name: document.getElementById("name"),
       phone: document.getElementById("phone"),
+      email: document.getElementById("email"),
       pickup: document.getElementById("pickup"),
       address: document.getElementById("address"),
       dailyDay: document.getElementById("dailyDay"),
@@ -702,12 +700,12 @@
       note: document.getElementById("note")
     };
 
-    function setStatus(message, type) {
+    function setError(message) {
       formStatus.textContent = message;
-      formStatus.className = "status show " + type;
+      formStatus.className = "status show err";
     }
 
-    function clearStatus() {
+    function clearError() {
       formStatus.textContent = "";
       formStatus.className = "status";
     }
@@ -716,61 +714,38 @@
       const lines = [
         "ROUTE 66 – PORUDŽBINA",
         "",
+        "PODACI KUPCA",
         `Ime: ${data.name}`,
         `Telefon: ${data.phone}`,
+        `Email: ${data.email || "(nije naveden)"}`,
         `Način: ${data.pickup}`,
-        data.address ? `Adresa: ${data.address}` : "Adresa: (nije navedena)",
+        `Adresa: ${data.address || "(nije navedena)"}`,
         "",
-        "Stavke:"
+        "STAVKE"
       ];
 
-      let hasItems = false;
-
       if (data.dailyDay && data.dailyQty > 0) {
-        lines.push(`- Dnevni meni (${data.dailyQty}x): ${data.dailyDay} (600 din/kom)`);
-        hasItems = true;
-      }
-
-      if (!hasItems) {
+        lines.push(`- Dnevni meni (${data.dailyQty}x): ${data.dailyDay}`);
+      } else {
         lines.push("- Dnevni meni nije izabran");
       }
 
       lines.push("");
-      lines.push(data.note ? `Napomena: ${data.note}` : "Napomena: (nema)");
+      lines.push(`Napomena: ${data.note || "(nema)"}`);
       lines.push("");
-      lines.push("Dostava: besplatna od 1000 din (do 5 km); ispod 1000 din = 260 din.");
-      lines.push("Plaćanje: pouzećem ili preuzimanje.");
+      lines.push("Dostava: besplatna od 1000 din (do 5 km), ispod 1000 din = 260 din.");
+      lines.push("Plaćanje: pouzećem ili prilikom preuzimanja.");
 
       return lines.join("\n");
     }
 
-    function validateForm(data) {
-      if (!data.name) {
-        return "Unesite ime i prezime.";
-      }
-
-      if (!data.phone) {
-        return "Unesite broj telefona.";
-      }
-
-      if (data.pickup === "Dostava" && !data.address) {
-        return "Unesite adresu za dostavu.";
-      }
-
-      if ((!data.dailyDay || data.dailyQty === 0) && !data.note) {
-        return "Izaberite dnevni meni ili u napomeni napišite šta poručujete.";
-      }
-
-      return "";
-    }
-
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      clearStatus();
+    form.addEventListener("submit", function(e) {
+      clearError();
 
       const data = {
         name: fields.name.value.trim(),
         phone: fields.phone.value.trim(),
+        email: fields.email.value.trim(),
         pickup: fields.pickup.value,
         address: fields.address.value.trim(),
         dailyDay: fields.dailyDay.value,
@@ -778,49 +753,31 @@
         note: fields.note.value.trim()
       };
 
-      const validationError = validateForm(data);
-      if (validationError) {
-        setStatus(validationError, "err");
+      if (!data.name) {
+        e.preventDefault();
+        setError("Unesite ime i prezime.");
         return;
       }
 
-      const message = buildOrderMessage(data);
-      const formData = new FormData(form);
-
-      formData.set("subject", `Nova porudžbina - Route 66 - ${data.name}`);
-      formData.set("message", message);
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Slanje...";
-
-      try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Accept": "application/json"
-          },
-          body: formData
-        });
-
-        const result = await response.json();
-
-        if (response.ok && result.success) {
-          setStatus("Porudžbina je uspešno poslata.", "ok");
-          form.reset();
-        } else {
-          const errorMessage = result && result.message
-            ? `Greška: ${result.message}`
-            : "Došlo je do greške pri slanju. Pokušajte ponovo.";
-          setStatus(errorMessage, "err");
-          console.error("Web3Forms error:", result);
-        }
-      } catch (error) {
-        setStatus("Greška pri slanju porudžbine. Proverite internet i pokušajte ponovo.", "err");
-        console.error("Request error:", error);
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Pošalji porudžbinu";
+      if (!data.phone) {
+        e.preventDefault();
+        setError("Unesite broj telefona.");
+        return;
       }
+
+      if (data.pickup === "Dostava" && !data.address) {
+        e.preventDefault();
+        setError("Unesite adresu za dostavu.");
+        return;
+      }
+
+      if ((!data.dailyDay || data.dailyQty === 0) && !data.note) {
+        e.preventDefault();
+        setError("Izaberite dnevni meni ili u napomeni napišite šta poručujete.");
+        return;
+      }
+
+      messageField.value = buildOrderMessage(data);
     });
 
     fields.pickup.addEventListener("change", function () {
