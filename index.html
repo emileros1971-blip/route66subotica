@@ -471,6 +471,11 @@
       box-shadow:0 14px 28px rgba(0,0,0,.35);
     }
 
+    .submitRow button:disabled{
+      opacity:.7;
+      cursor:not-allowed;
+    }
+
     .mini{
       margin-top:10px;
       font-size:12px;
@@ -493,6 +498,12 @@
       background:rgba(255,90,90,.10);
       border:1px solid rgba(255,90,90,.28);
       color:#ffb3b3;
+    }
+
+    .status.ok{
+      background:rgba(36,210,122,.10);
+      border:1px solid rgba(36,210,122,.28);
+      color:#aef0cc;
     }
 
     .sticky{
@@ -1333,7 +1344,7 @@
               </div>
 
               <div class="submitRow">
-                <button type="submit">Pošalji porudžbinu</button>
+                <button type="submit" id="submitBtn">Pošalji porudžbinu</button>
                 <a class="btn" href="tel:+381616856590">Pozovi</a>
               </div>
 
@@ -1370,10 +1381,20 @@
     const addressField = document.getElementById("address");
     const orderPreview = document.getElementById("orderPreview");
     const qtySelects = document.querySelectorAll(".menu-qty");
+    const submitBtn = document.getElementById("submitBtn");
+    const emailField = document.getElementById("email");
+    const nameField = document.getElementById("name");
+    const phoneField = document.getElementById("phone");
+    const noteField = document.getElementById("note");
 
     function setError(message) {
       formStatus.textContent = message;
       formStatus.className = "status show err";
+    }
+
+    function setSuccess(message) {
+      formStatus.textContent = message;
+      formStatus.className = "status show ok";
     }
 
     function clearError() {
@@ -1415,9 +1436,118 @@
       `).join("");
     }
 
+    function updateAddressRequirement() {
+      const isDelivery = pickupField.value === "Dostava";
+      addressField.required = isDelivery;
+      addressField.disabled = false;
+      if (!isDelivery) {
+        addressField.removeAttribute("required");
+      }
+    }
+
     function buildOrderMessage(data, items) {
       const lines = [
         "ROUTE 66 - PORUDŽBINA",
         "",
         "PODACI KUPCA",
+        `Ime i prezime: ${data.name}`,
+        `Telefon: ${data.phone}`,
+        `Email: ${data.email || "Nije unet"}`,
+        `Način preuzimanja: ${data.pickup}`,
+        `Adresa: ${data.pickup === "Dostava" ? (data.address || "Nije uneta") : "Lično preuzimanje"}`,
+        `Napomena: ${data.note || "Nema"}`,
+        "",
+        "IZABRANE STAVKE"
+      ];
 
+      items.forEach((item, index) => {
+        lines.push(`${index + 1}. ${item.qty}x ${item.name} (${item.price})`);
+      });
+
+      lines.push("");
+      lines.push(`Ukupno različitih stavki: ${items.length}`);
+      lines.push(`Ukupno komada/porcija: ${items.reduce((sum, item) => sum + item.qty, 0)}`);
+
+      return lines.join("\n");
+    }
+
+    qtySelects.forEach(select => {
+      select.addEventListener("change", () => {
+        renderPreview();
+        clearError();
+      });
+    });
+
+    pickupField.addEventListener("change", () => {
+      updateAddressRequirement();
+      clearError();
+    });
+
+    renderPreview();
+    updateAddressRequirement();
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      clearError();
+
+      const items = getSelectedItems();
+
+      if (items.length === 0) {
+        setError("Izaberi bar jednu stavku iz menija.");
+        return;
+      }
+
+      if (pickupField.value === "Dostava" && !addressField.value.trim()) {
+        setError("Unesi adresu za dostavu.");
+        addressField.focus();
+        return;
+      }
+
+      const data = {
+        name: nameField.value.trim(),
+        phone: phoneField.value.trim(),
+        email: emailField.value.trim(),
+        pickup: pickupField.value,
+        address: addressField.value.trim(),
+        note: noteField.value.trim()
+      };
+
+      messageField.value = buildOrderMessage(data, items);
+      replytoField.value = data.email || "";
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Slanje...";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          setSuccess("Porudžbina je uspešno poslata.");
+          form.reset();
+          qtySelects.forEach(select => { select.value = "0"; });
+          messageField.value = "";
+          replytoField.value = "";
+          updateAddressRequirement();
+          renderPreview();
+          window.scrollTo({ top: document.getElementById("poruci").offsetTop - 20, behavior: "smooth" });
+        } else {
+          setError("Došlo je do greške pri slanju. Pokušaj ponovo ili pozovi 061 6856590.");
+        }
+      } catch (error) {
+        setError("Došlo je do greške pri slanju. Proveri internet ili pozovi 061 6856590.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Pošalji porudžbinu";
+      }
+    });
+  </script>
+</body>
+</html>
