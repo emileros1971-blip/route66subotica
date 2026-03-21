@@ -490,6 +490,9 @@
       font-weight:700;
       display:none;
       line-height:1.45;
+      white-space:normal;
+      word-break:break-word;
+      overflow-wrap:anywhere;
     }
 
     .status.show{display:block}
@@ -1291,7 +1294,7 @@
           </div>
 
           <div class="bd">
-            <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
+            <form id="orderForm" novalidate>
               <input type="hidden" name="access_key" value="cbfd0333-5bad-45ad-b0f3-6fb64af0b6d1">
               <input type="hidden" name="subject" value="Nova porudžbina - Route 66">
               <input type="hidden" name="from_name" value="Route 66 Subotica sajt">
@@ -1373,6 +1376,8 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
+    const WEB3FORMS_URL = "https://api.web3forms.com/submit";
+
     const form = document.getElementById("orderForm");
     const formStatus = document.getElementById("formStatus");
     const messageField = document.getElementById("messageField");
@@ -1397,7 +1402,7 @@
       formStatus.className = "status show ok";
     }
 
-    function clearError() {
+    function clearStatus() {
       formStatus.textContent = "";
       formStatus.className = "status";
     }
@@ -1439,13 +1444,14 @@
     function updateAddressRequirement() {
       const isDelivery = pickupField.value === "Dostava";
       addressField.required = isDelivery;
-      addressField.disabled = false;
       if (!isDelivery) {
-        addressField.removeAttribute("required");
+        addressField.value = "";
       }
     }
 
     function buildOrderMessage(data, items) {
+      const totalQty = items.reduce((sum, item) => sum + item.qty, 0);
+
       const lines = [
         "ROUTE 66 - PORUDŽBINA",
         "",
@@ -1453,7 +1459,7 @@
         `Ime i prezime: ${data.name}`,
         `Telefon: ${data.phone}`,
         `Email: ${data.email || "Nije unet"}`,
-        `Način preuzimanja: ${data.pickup}`,
+        `Način: ${data.pickup}`,
         `Adresa: ${data.pickup === "Dostava" ? (data.address || "Nije uneta") : "Lično preuzimanje"}`,
         `Napomena: ${data.note || "Nema"}`,
         "",
@@ -1466,7 +1472,7 @@
 
       lines.push("");
       lines.push(`Ukupno različitih stavki: ${items.length}`);
-      lines.push(`Ukupno komada/porcija: ${items.reduce((sum, item) => sum + item.qty, 0)}`);
+      lines.push(`Ukupno komada/porcija: ${totalQty}`);
 
       return lines.join("\n");
     }
@@ -1474,32 +1480,45 @@
     qtySelects.forEach(select => {
       select.addEventListener("change", () => {
         renderPreview();
-        clearError();
+        clearStatus();
       });
     });
 
     pickupField.addEventListener("change", () => {
       updateAddressRequirement();
-      clearError();
+      clearStatus();
     });
 
     renderPreview();
     updateAddressRequirement();
 
-    form.addEventListener("submit", async (e) => {
+    form.addEventListener("submit", async function(e) {
       e.preventDefault();
-      clearError();
+      e.stopPropagation();
+      clearStatus();
 
       const items = getSelectedItems();
 
-      if (items.length === 0) {
-        setError("Izaberi bar jednu stavku iz menija.");
+      if (!nameField.value.trim()) {
+        setError("Unesi ime i prezime.");
+        nameField.focus();
+        return;
+      }
+
+      if (!phoneField.value.trim()) {
+        setError("Unesi telefon.");
+        phoneField.focus();
         return;
       }
 
       if (pickupField.value === "Dostava" && !addressField.value.trim()) {
         setError("Unesi adresu za dostavu.");
         addressField.focus();
+        return;
+      }
+
+      if (items.length === 0) {
+        setError("Izaberi bar jednu stavku iz menija.");
         return;
       }
 
@@ -1512,41 +1531,58 @@
         note: noteField.value.trim()
       };
 
-      messageField.value = buildOrderMessage(data, items);
+      const finalMessage = buildOrderMessage(data, items);
+      messageField.value = finalMessage;
       replytoField.value = data.email || "";
+
+      const formData = new FormData(form);
+      formData.set("message", finalMessage);
+      formData.set("replyto", data.email || "");
 
       submitBtn.disabled = true;
       submitBtn.textContent = "Slanje...";
 
       try {
-        const response = await fetch(form.action, {
+        const response = await fetch(WEB3FORMS_URL, {
           method: "POST",
-          body: new FormData(form),
+          body: formData,
           headers: {
             "Accept": "application/json"
           }
         });
 
-        const result = await response.json();
+        let result = null;
+        try {
+          result = await response.json();
+        } catch (_) {
+          result = null;
+        }
 
-        if (response.ok && result.success) {
+        if (response.ok && result && result.success) {
           setSuccess("Porudžbina je uspešno poslata.");
           form.reset();
-          qtySelects.forEach(select => { select.value = "0"; });
+          qtySelects.forEach(select => {
+            select.value = "0";
+          });
           messageField.value = "";
           replytoField.value = "";
-          updateAddressRequirement();
           renderPreview();
-          window.scrollTo({ top: document.getElementById("poruci").offsetTop - 20, behavior: "smooth" });
+          updateAddressRequirement();
+          window.scrollTo({
+            top: document.getElementById("poruci").offsetTop - 20,
+            behavior: "smooth"
+          });
         } else {
-          setError("Došlo je do greške pri slanju. Pokušaj ponovo ili pozovi 061 6856590.");
+          setError("Slanje nije uspelo. Pokušaj ponovo ili pozovi 061 6856590.");
         }
       } catch (error) {
-        setError("Došlo je do greške pri slanju. Proveri internet ili pozovi 061 6856590.");
+        setError("Greška pri slanju. Pokušaj ponovo ili pozovi 061 6856590.");
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = "Pošalji porudžbinu";
       }
+
+      return false;
     });
   </script>
 </body>
