@@ -63,481 +63,153 @@
       background:linear-gradient(180deg, rgba(255,210,0,.16), rgba(0,0,0,0));
     }
 
-    .brand h1{
-      margin:0;
-      font-size:24px;
-      letter-spacing:.2px;
-    }
-
-    .brand p{
-      margin:8px 0 0;
-      color:var(--muted);
-      line-height:1.45;
-      font-size:13px;
-      max-width:860px;
-    }
+    .brand h1{ margin:0; font-size:24px; letter-spacing:.2px; }
+    .brand p{ margin:8px 0 0; color:var(--muted); line-height:1.45; font-size:13px; max-width:860px; }
 
     .notice{
-      margin-top:10px;
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px dashed rgba(255,210,0,.35);
-      background:rgba(255,210,0,.07);
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
+      margin-top:10px; padding:10px 12px; border-radius:14px;
+      border:1px dashed rgba(255,210,0,.35); background:rgba(255,210,0,.07);
+      display:flex; gap:10px; flex-wrap:wrap;
     }
-
     .notice strong{color:var(--yellow)}
 
-    .badges{
-      margin-top:10px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
+    .badges{ margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; }
     .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:7px 10px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:800;
-      background:rgba(255,210,0,.95);
-      color:#141414;
+      display:inline-flex; align-items:center; gap:8px; padding:7px 10px;
+      border-radius:999px; font-size:12px; font-weight:800;
+      background:rgba(255,210,0,.95); color:#141414;
     }
-
     .badge.dark{
-      background:rgba(255,255,255,.08);
-      color:var(--text);
-      border:1px solid rgba(255,255,255,.12);
-      font-weight:700;
+      background:rgba(255,255,255,.08); color:var(--text);
+      border:1px solid rgba(255,255,255,.12); font-weight:700;
     }
 
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      align-items:center;
-    }
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center; }
 
     .btn{
-      border:1px solid var(--line);
-      background:var(--card2);
-      color:var(--text);
-      padding:11px 14px;
-      border-radius:14px;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-      box-shadow:0 10px 24px rgba(0,0,0,.25);
-      white-space:nowrap;
-      transition:transform .15s ease;
+      border:1px solid var(--line); background:var(--card2); color:var(--text);
+      padding:11px 14px; border-radius:14px; text-decoration:none;
+      display:inline-flex; align-items:center; gap:10px; font-weight:900;
+      box-shadow:0 10px 24px rgba(0,0,0,.25); white-space:nowrap; transition:transform .15s ease;
     }
-
     .btn:hover{transform:translateY(-1px)}
+    .btn-yellow{ background:linear-gradient(180deg, var(--yellow2), var(--yellow)); color:#141414; border-color:rgba(255,210,0,.5); }
+    .btn-green{ background:linear-gradient(180deg, #36f09a, var(--ok)); color:#08140e; border-color:rgba(36,210,122,.45); }
 
-    .btn-yellow{
-      background:linear-gradient(180deg, var(--yellow2), var(--yellow));
-      color:#141414;
-      border-color:rgba(255,210,0,.5);
-    }
-
-    .btn-green{
-      background:linear-gradient(180deg, #36f09a, var(--ok));
-      color:#08140e;
-      border-color:rgba(36,210,122,.45);
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:16px;
-      padding:16px;
-    }
-
-    @media (max-width:980px){
-      .grid{grid-template-columns:1fr;}
-    }
+    .grid{ display:grid; grid-template-columns:1.2fr .8fr; gap:16px; padding:16px; }
+    @media (max-width:980px){ .grid{grid-template-columns:1fr;} }
 
     .card{
-      border:1px solid var(--line);
-      background:rgba(17,17,17,.84);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
+      border:1px solid var(--line); background:rgba(17,17,17,.84);
+      border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
     }
-
     .card .hd{
-      padding:14px 14px 12px;
-      border-bottom:1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
+      padding:14px 14px 12px; border-bottom:1px solid var(--line);
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
       background:rgba(255,210,0,.06);
     }
-
     .card .hd h2{margin:0; font-size:15px}
     .card .hd small{color:var(--muted)}
     .card .bd{padding:14px}
 
     .sectionTitle{
-      margin:0 0 10px;
-      font-size:13px;
-      color:var(--muted);
-      font-weight:800;
-      letter-spacing:.2px;
-      text-transform:uppercase;
+      margin:0 0 10px; font-size:13px; color:var(--muted); font-weight:800;
+      letter-spacing:.2px; text-transform:uppercase;
     }
 
-    .specialsGrid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-bottom:18px;
-    }
-
-    @media (max-width:680px){
-      .specialsGrid{grid-template-columns:1fr;}
-    }
+    .specialsGrid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px; }
+    @media (max-width:680px){ .specialsGrid{grid-template-columns:1fr;} }
 
     .specialCard{
       border:1px solid rgba(255,210,0,.22);
       background:linear-gradient(180deg, rgba(255,210,0,.08), rgba(255,210,0,.03));
-      border-radius:14px;
-      padding:12px;
+      border-radius:14px; padding:12px;
     }
+    .specialName{ font-weight:900; color:var(--yellow); font-size:15px; margin-bottom:6px; }
+    .specialPrice{ font-size:13px; font-weight:900; color:var(--text); margin-bottom:10px; }
 
-    .specialName{
-      font-weight:900;
-      color:var(--yellow);
-      font-size:15px;
-      margin-bottom:6px;
-    }
+    .dailyGrid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:680px){ .dailyGrid{grid-template-columns:1fr;} }
 
-    .specialPrice{
-      font-size:13px;
-      font-weight:900;
-      color:var(--text);
-      margin-bottom:10px;
-    }
-
-    .dailyGrid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    @media (max-width:680px){
-      .dailyGrid{grid-template-columns:1fr;}
-    }
-
-    .dailyCard{
-      border:1px solid #252525;
-      background:rgba(0,0,0,.22);
-      border-radius:14px;
-      padding:12px;
-    }
-
-    .dayName{
-      font-weight:900;
-      font-size:15px;
-      color:var(--yellow);
-      margin-bottom:8px;
-    }
-
-    .dayItems{
-      color:var(--text);
-      font-size:13px;
-      line-height:1.45;
-      margin-bottom:10px;
-    }
+    .dailyCard{ border:1px solid #252525; background:rgba(0,0,0,.22); border-radius:14px; padding:12px; }
+    .dayName{ font-weight:900; font-size:15px; color:var(--yellow); margin-bottom:8px; }
+    .dayItems{ color:var(--text); font-size:13px; line-height:1.45; margin-bottom:10px; }
 
     .priceBar{
-      margin-top:12px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px dashed rgba(255,210,0,.35);
-      background:rgba(255,210,0,.06);
+      margin-top:12px; display:flex; align-items:center; justify-content:space-between;
+      gap:10px; flex-wrap:wrap; padding:10px 12px; border-radius:14px;
+      border:1px dashed rgba(255,210,0,.35); background:rgba(255,210,0,.06);
     }
-
     .priceBar strong{color:var(--yellow)}
     .priceBar span{color:var(--muted); font-size:12px}
 
     .menuTable{
-      width:100%;
-      border-collapse:collapse;
-      overflow:hidden;
-      border-radius:14px;
-      border:1px solid #252525;
-      background:rgba(0,0,0,.18);
-      margin-bottom:18px;
+      width:100%; border-collapse:collapse; overflow:hidden; border-radius:14px;
+      border:1px solid #252525; background:rgba(0,0,0,.18); margin-bottom:18px;
     }
-
     .menuTable th, .menuTable td{
-      padding:10px 10px;
-      border-bottom:1px solid #242424;
-      vertical-align:top;
-      font-size:12.8px;
-      line-height:1.35;
+      padding:10px; border-bottom:1px solid #242424;
+      vertical-align:top; font-size:12.8px; line-height:1.35;
     }
-
     .menuTable th{
-      text-align:left;
-      font-size:12px;
-      color:var(--muted);
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.2px;
-      background:rgba(255,210,0,.06);
+      text-align:left; font-size:12px; color:var(--muted); font-weight:900;
+      text-transform:uppercase; letter-spacing:.2px; background:rgba(255,210,0,.06);
     }
-
-    .menuName{
-      font-weight:900;
-      color:var(--text);
-      font-size:13px;
-    }
-
-    .sub{
-      color:var(--muted);
-      font-size:12px;
-      margin-top:4px;
-    }
-
-    .pr{
-      white-space:nowrap;
-      font-weight:900;
-      color:var(--yellow);
-    }
-
-    .qtyCell{
-      width:160px;
-      text-align:right;
-    }
+    .menuName{ font-weight:900; color:var(--text); font-size:13px; }
+    .sub{ color:var(--muted); font-size:12px; margin-top:4px; }
+    .pr{ white-space:nowrap; font-weight:900; color:var(--yellow); }
+    .qtyCell{ width:160px; text-align:right; }
 
     .qty{
-      width:72px;
-      padding:8px 10px;
-      border-radius:10px;
-      border:1px solid #2a2a2a;
-      background:#0f0f0f;
-      color:var(--text);
-      font-size:14px;
+      width:72px; padding:8px 10px; border-radius:10px;
+      border:1px solid #2a2a2a; background:#0f0f0f; color:var(--text); font-size:14px;
     }
+    .qtyGroup{ display:flex; flex-direction:column; gap:6px; align-items:flex-end; }
+    .qtyRow{ display:flex; align-items:center; justify-content:flex-end; gap:6px; }
+    .qtyTag{ min-width:42px; font-size:11px; font-weight:900; color:var(--muted); text-transform:uppercase; letter-spacing:.2px; text-align:right; }
 
-    .qtyGroup{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      align-items:flex-end;
-    }
-
-    .qtyRow{
-      display:flex;
-      align-items:center;
-      justify-content:flex-end;
-      gap:6px;
-    }
-
-    .qtyTag{
-      min-width:42px;
-      font-size:11px;
-      font-weight:900;
-      color:var(--muted);
-      text-transform:uppercase;
-      letter-spacing:.2px;
-      text-align:right;
-    }
-
-    label{
-      display:block;
-      font-weight:900;
-      font-size:12px;
-      margin:12px 0 6px;
-      color:var(--muted);
-      text-transform:uppercase;
-      letter-spacing:.18px;
-    }
-
-    input, textarea, select{
-      width:100%;
-      padding:11px 12px;
-      border-radius:12px;
-      border:1px solid #2a2a2a;
-      background:#0f0f0f;
-      color:var(--text);
-      outline:none;
-      font-size:14px;
-    }
-
+    label{ display:block; font-weight:900; font-size:12px; margin:12px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.18px; }
+    input, textarea, select{ width:100%; padding:11px 12px; border-radius:12px; border:1px solid #2a2a2a; background:#0f0f0f; color:var(--text); outline:none; font-size:14px; }
     textarea{min-height:88px; resize:vertical;}
+    input:focus, textarea:focus, select:focus{ border-color:rgba(255,210,0,.55); box-shadow:0 0 0 3px rgba(255,210,0,.10); }
 
-    input:focus, textarea:focus, select:focus{
-      border-color:rgba(255,210,0,.55);
-      box-shadow:0 0 0 3px rgba(255,210,0,.10);
-    }
+    .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:520px){ .row{grid-template-columns:1fr;} }
 
-    .row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    @media (max-width:520px){
-      .row{grid-template-columns:1fr;}
-    }
-
-    .hint{
-      margin-top:10px;
-      font-size:12px;
-      color:var(--muted);
-      line-height:1.45;
-      padding:12px;
-      border-radius:14px;
-      border:1px dashed #2c2c2c;
-      background:rgba(0,0,0,.18);
-    }
-
+    .hint{ margin-top:10px; font-size:12px; color:var(--muted); line-height:1.45; padding:12px; border-radius:14px; border:1px dashed #2c2c2c; background:rgba(0,0,0,.18); }
     .hint strong{color:var(--yellow)}
 
-    .summaryBox{
-      margin-top:14px;
-      border:1px solid rgba(255,210,0,.22);
-      background:rgba(255,210,0,.06);
-      border-radius:14px;
-      padding:12px;
-    }
+    .summaryBox{ margin-top:14px; border:1px solid rgba(255,210,0,.22); background:rgba(255,210,0,.06); border-radius:14px; padding:12px; }
+    .summaryTitle{ font-size:12px; font-weight:900; color:var(--yellow); text-transform:uppercase; margin-bottom:8px; letter-spacing:.2px; }
+    .summaryList{ display:grid; gap:8px; font-size:13px; }
+    .summaryItem{ display:flex; justify-content:space-between; gap:12px; border-bottom:1px dashed rgba(255,255,255,.08); padding-bottom:6px; }
+    .summaryItem:last-child{ border-bottom:0; padding-bottom:0; }
+    .summaryEmpty{ font-size:13px; color:var(--muted); }
 
-    .summaryTitle{
-      font-size:12px;
-      font-weight:900;
-      color:var(--yellow);
-      text-transform:uppercase;
-      margin-bottom:8px;
-      letter-spacing:.2px;
-    }
-
-    .summaryList{
-      display:grid;
-      gap:8px;
-      font-size:13px;
-    }
-
-    .summaryItem{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      border-bottom:1px dashed rgba(255,255,255,.08);
-      padding-bottom:6px;
-    }
-
-    .summaryItem:last-child{
-      border-bottom:0;
-      padding-bottom:0;
-    }
-
-    .summaryEmpty{
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    .submitRow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:14px;
-      align-items:center;
-    }
-
+    .submitRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; align-items:center; }
     .submitRow button{
-      border:0;
-      cursor:pointer;
-      padding:12px 14px;
-      border-radius:14px;
-      font-weight:1000;
-      background:linear-gradient(180deg, var(--yellow2), var(--yellow));
-      color:#121212;
+      border:0; cursor:pointer; padding:12px 14px; border-radius:14px; font-weight:1000;
+      background:linear-gradient(180deg, var(--yellow2), var(--yellow)); color:#121212;
       box-shadow:0 14px 28px rgba(0,0,0,.35);
     }
+    .submitRow button:disabled{ opacity:.7; cursor:not-allowed; }
 
-    .submitRow button:disabled{
-      opacity:.7;
-      cursor:not-allowed;
-    }
+    .mini{ margin-top:10px; font-size:12px; color:var(--muted); }
 
-    .mini{
-      margin-top:10px;
-      font-size:12px;
-      color:var(--muted);
-    }
-
-    .status{
-      margin-top:12px;
-      padding:10px 12px;
-      border-radius:12px;
-      font-size:13px;
-      font-weight:700;
-      display:none;
-      line-height:1.45;
-      white-space:normal;
-      word-break:break-word;
-      overflow-wrap:anywhere;
-    }
-
+    .status{ margin-top:12px; padding:10px 12px; border-radius:12px; font-size:13px; font-weight:700; display:none; line-height:1.45; white-space:normal; word-break:break-word; overflow-wrap:anywhere; }
     .status.show{display:block}
-
-    .status.err{
-      background:rgba(255,90,90,.10);
-      border:1px solid rgba(255,90,90,.28);
-      color:#ffb3b3;
-    }
-
-    .status.ok{
-      background:rgba(36,210,122,.10);
-      border:1px solid rgba(36,210,122,.28);
-      color:#aef0cc;
-    }
+    .status.err{ background:rgba(255,90,90,.10); border:1px solid rgba(255,90,90,.28); color:#ffb3b3; }
+    .status.ok{ background:rgba(36,210,122,.10); border:1px solid rgba(36,210,122,.28); color:#aef0cc; }
 
     .sticky{
-      position:fixed;
-      left:0;
-      right:0;
-      bottom:0;
-      padding:10px 12px;
-      background:rgba(11,11,11,.85);
-      border-top:1px solid rgba(255,255,255,.08);
-      backdrop-filter:blur(10px);
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      z-index:50;
+      position:fixed; left:0; right:0; bottom:0; padding:10px 12px;
+      background:rgba(11,11,11,.85); border-top:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(10px); display:flex; gap:10px; justify-content:center; z-index:50;
     }
-
     .sticky .btn{box-shadow:none}
+    @media (min-width:981px){ .sticky{display:none;} }
 
-    @media (min-width:981px){
-      .sticky{display:none;}
-    }
-
-    footer{
-      text-align:center;
-      margin-top:16px;
-      color:var(--muted);
-      font-size:12px;
-      opacity:.9;
-      padding-bottom:40px;
-    }
+    footer{ text-align:center; margin-top:16px; color:var(--muted); font-size:12px; opacity:.9; padding-bottom:40px; }
   </style>
 </head>
 
@@ -551,18 +223,15 @@
             Dnevni meni (nedeljno) + kompletan cenovnik. Poručivanje je brzo direktno sa sajta ili pozivom.
             <strong>Plaćanje nije online</strong>: plaćate <strong>pouzećem</strong> kada stigne dostava ili <strong>prilikom preuzimanja</strong>.
           </p>
-
           <div class="notice" aria-label="Informacije o dostavi">
             <span>🚚 <strong>Dostava:</strong> besplatna za porudžbine od <strong>1000 din</strong> (do <strong>5 km</strong>). Za porudžbine ispod <strong>1000 din</strong>, dostava je <strong>260 din</strong>.</span>
           </div>
-
           <div class="badges">
             <span class="badge">🟡 Klikni i dodaj u porudžbinu</span>
             <span class="badge dark">📞 061 6856590</span>
             <span class="badge dark">✉️ Direktna porudžbina</span>
           </div>
         </div>
-
         <div class="actions">
           <a class="btn btn-yellow" href="#poruci">Poruči odmah</a>
           <a class="btn" href="tel:+381616856590">Pozovi</a>
@@ -576,43 +245,23 @@
             <h2>Meni</h2>
             <small>Izaberi količinu za svaku stavku</small>
           </div>
-
           <div class="bd">
+
+            <!-- DANAŠNJI SPECIJALI -->
             <div class="sectionTitle">Današnji specijali</div>
-
             <div class="specialsGrid">
-              <div class="specialCard">
-                <div class="specialName">Tarana sa srpskom kobasicom</div>
-                <div class="specialPrice">440 / 570 din</div>
-                <div class="qtyGroup">
-                  <div class="qtyRow">
-                    <span class="qtyTag">Mala</span>
-                    <select class="qty menu-qty" data-key="tarana-mala" data-name="Tarana sa srpskom kobasicom" data-portion="Mala porcija" data-price="440 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </div>
-                  <div class="qtyRow">
-                    <span class="qtyTag">Velika</span>
-                    <select class="qty menu-qty" data-key="tarana-velika" data-name="Tarana sa srpskom kobasicom" data-portion="Velika porcija" data-price="570 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
 
               <div class="specialCard">
-                <div class="specialName">Piletina u sosu od pavlake</div>
+                <div class="specialName">Pasulj sa butkicom</div>
                 <div class="specialPrice">470 / 640 din</div>
                 <div class="qtyGroup">
-                  <div class="qtyRow">
-                    <span class="qtyTag">Mala</span>
-                    <select class="qty menu-qty" data-key="piletina-pavlaka-mala" data-name="Piletina u sosu od pavlake" data-portion="Mala porcija" data-price="470 din">
+                  <div class="qtyRow"><span class="qtyTag">Mala</span>
+                    <select class="qty menu-qty" data-key="pasulj-mala" data-name="Pasulj sa butkicom" data-portion="Mala porcija" data-price="470 din">
                       <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                     </select>
                   </div>
-                  <div class="qtyRow">
-                    <span class="qtyTag">Velika</span>
-                    <select class="qty menu-qty" data-key="piletina-pavlaka-velika" data-name="Piletina u sosu od pavlake" data-portion="Velika porcija" data-price="640 din">
+                  <div class="qtyRow"><span class="qtyTag">Velika</span>
+                    <select class="qty menu-qty" data-key="pasulj-velika" data-name="Pasulj sa butkicom" data-portion="Velika porcija" data-price="640 din">
                       <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                     </select>
                   </div>
@@ -620,37 +269,69 @@
               </div>
 
               <div class="specialCard">
-                <div class="specialName">Špagete bolonjeze</div>
-                <div class="specialPrice">480 / 640 din</div>
+                <div class="specialName">Punjena paprika</div>
+                <div class="specialPrice">500 / 680 din</div>
                 <div class="qtyGroup">
-                  <div class="qtyRow">
-                    <span class="qtyTag">Mala</span>
-                    <select class="qty menu-qty" data-key="spagete-mala" data-name="Špagete bolognese" data-portion="Mala porcija" data-price="480 din">
+                  <div class="qtyRow"><span class="qtyTag">Mala</span>
+                    <select class="qty menu-qty" data-key="sarma-mala" data-name="Sarma / punjena paprika" data-portion="Mala porcija" data-price="500 din">
                       <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                     </select>
                   </div>
-                  <div class="qtyRow">
-                    <span class="qtyTag">Velika</span>
-                    <select class="qty menu-qty" data-key="spagete-velika" data-name="Špagete bolognese" data-portion="Velika porcija" data-price="640 din">
+                  <div class="qtyRow"><span class="qtyTag">Velika</span>
+                    <select class="qty menu-qty" data-key="sarma-velika" data-name="Sarma / punjena paprika" data-portion="Velika porcija" data-price="680 din">
                       <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                     </select>
                   </div>
                 </div>
               </div>
+
+              <div class="specialCard">
+                <div class="specialName">Bečka šnicla sa prilozima</div>
+                <div class="specialPrice">470 / 640 din</div>
+                <div class="qtyGroup">
+                  <div class="qtyRow"><span class="qtyTag">Mala</span>
+                    <select class="qty menu-qty" data-key="becka-mala" data-name="Bečka šnicla sa prilozima" data-portion="Mala porcija" data-price="470 din">
+                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                    </select>
+                  </div>
+                  <div class="qtyRow"><span class="qtyTag">Velika</span>
+                    <select class="qty menu-qty" data-key="becka-velika" data-name="Bečka šnicla sa prilozima" data-portion="Velika porcija" data-price="640 din">
+                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="specialCard">
+                <div class="specialName">Pileći štapići sa prilozima</div>
+                <div class="specialPrice">470 / 640 din</div>
+                <div class="qtyGroup">
+                  <div class="qtyRow"><span class="qtyTag">Mala</span>
+                    <select class="qty menu-qty" data-key="stapici-mala" data-name="Pileći štapići sa prilozima" data-portion="Mala porcija" data-price="470 din">
+                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                    </select>
+                  </div>
+                  <div class="qtyRow"><span class="qtyTag">Velika</span>
+                    <select class="qty menu-qty" data-key="stapici-velika" data-name="Pileći štapići sa prilozima" data-portion="Velika porcija" data-price="640 din">
+                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
+            <!-- DNEVNI MENI -->
             <div class="sectionTitle">Dnevni meni (nedeljno)</div>
-
             <div class="dailyGrid">
               <div class="dailyCard">
                 <div class="dayName">Ponedeljak</div>
-                <div class="dayItems">Kim čorba, kobasica sa boranijom, desert</div>
+                <div class="dayItems">Kim čorba, bečka šnicla, rizibizi, salata</div>
                 <label for="qty-dnevni-pon">Količina</label>
-                <select class="qty menu-qty" id="qty-dnevni-pon" data-key="dnevni-pon" data-name="Dnevni meni - Ponedeljak: Kim čorba, kobasica sa boranijom, desert" data-price="630 din">
+                <select class="qty menu-qty" id="qty-dnevni-pon" data-key="dnevni-pon" data-name="Dnevni meni - Ponedeljak: Kim čorba, bečka šnicla, rizibizi, salata" data-price="630 din">
                   <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
-
               <div class="dailyCard">
                 <div class="dayName">Utorak</div>
                 <div class="dayItems">Krompir čorba, piletina sa pečurkama u pavlaci sa testeninom, desert</div>
@@ -659,16 +340,14 @@
                   <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
-
               <div class="dailyCard">
                 <div class="dayName">Sreda</div>
-                <div class="dayItems">Čorba od graška, fašir, krompir varivo, desert</div>
+                <div class="dayItems">Čorba od boranije, fašir, krompir pire, varivo</div>
                 <label for="qty-dnevni-sre">Količina</label>
-                <select class="qty menu-qty" id="qty-dnevni-sre" data-key="dnevni-sre" data-name="Dnevni meni - Sreda: Čorba od graška, fašir, krompir varivo, desert" data-price="630 din">
+                <select class="qty menu-qty" id="qty-dnevni-sre" data-key="dnevni-sre" data-name="Dnevni meni - Sreda: Čorba od boranije, fašir, krompir pire, varivo" data-price="630 din">
                   <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
-
               <div class="dailyCard">
                 <div class="dayName">Četvrtak</div>
                 <div class="dayItems">Ragu čorba, giros, pomfrit, salata</div>
@@ -677,7 +356,6 @@
                   <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
-
               <div class="dailyCard">
                 <div class="dayName">Petak</div>
                 <div class="dayItems">Pasulj čorba, mešano meso, pomfrit, salata</div>
@@ -686,12 +364,11 @@
                   <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
-
               <div class="dailyCard">
                 <div class="dayName">Subota</div>
-                <div class="dayItems">Čorba od povrća, pileći batak, pire krompir, salata</div>
+                <div class="dayItems">Čorba od povrća, grilovano belo meso, pire krompir, salata</div>
                 <label for="qty-dnevni-sub">Količina</label>
-                <select class="qty menu-qty" id="qty-dnevni-sub" data-key="dnevni-sub" data-name="Dnevni meni - Subota: Čorba od povrća, pileći batak, pire krompir, salata" data-price="630 din">
+                <select class="qty menu-qty" id="qty-dnevni-sub" data-key="dnevni-sub" data-name="Dnevni meni - Subota: Čorba od povrća, grilovano belo meso, pire krompir, salata" data-price="630 din">
                   <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                 </select>
               </div>
@@ -702,527 +379,224 @@
               <span>Uključuje: supa/čorba, glavno jelo, prilozi, hleb</span>
             </div>
 
+            <!-- KUVANA JELA -->
             <div class="sectionTitle" style="margin-top:18px;">Kuvana jela (mala / velika porcija)</div>
             <table class="menuTable">
-              <thead>
-                <tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
-              </thead>
+              <thead><tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr></thead>
               <tbody>
-                <tr>
-                  <td><div class="menuName">Tarana sa srpskom kobasicom</div></td>
-                  <td class="pr">440 / 570 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="tarana-mala" data-name="Tarana sa srpskom kobasicom" data-portion="Mala porcija" data-price="440 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="tarana-velika" data-name="Tarana sa srpskom kobasicom" data-portion="Velika porcija" data-price="570 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td><div class="menuName">Piletina u sosu od pavlake</div></td>
-                  <td class="pr">470 / 640 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="piletina-pavlaka-mala" data-name="Piletina u sosu od pavlake" data-portion="Mala porcija" data-price="470 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="piletina-pavlaka-velika" data-name="Piletina u sosu od pavlake" data-portion="Velika porcija" data-price="640 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-
                 <tr>
                   <td><div class="menuName">Pasulj sa butkicom</div></td>
                   <td class="pr">470 / 640 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="pasulj-mala" data-name="Pasulj sa butkicom" data-portion="Mala porcija" data-price="470 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="pasulj-velika" data-name="Pasulj sa butkicom" data-portion="Velika porcija" data-price="640 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="pasulj-mala" data-name="Pasulj sa butkicom" data-portion="Mala porcija" data-price="470 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="pasulj-velika" data-name="Pasulj sa butkicom" data-portion="Velika porcija" data-price="640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Slatki kupus sa butkicom</div></td>
-                  <td class="pr">440 / 610 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="kupus-mala" data-name="Slatki kupus sa butkicom" data-portion="Mala porcija" data-price="440 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="kupus-velika" data-name="Slatki kupus sa butkicom" data-portion="Velika porcija" data-price="610 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="pr">470 / 640 din</td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="kupus-mala" data-name="Slatki kupus sa butkicom" data-portion="Mala porcija" data-price="470 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="kupus-velika" data-name="Slatki kupus sa butkicom" data-portion="Velika porcija" data-price="640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Ćufte u paradajz sosu</div></td>
                   <td class="pr">500 / 650 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="cufte-mala" data-name="Ćufte u paradajz sosu" data-portion="Mala porcija" data-price="500 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="cufte-velika" data-name="Ćufte u paradajz sosu" data-portion="Velika porcija" data-price="650 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="cufte-mala" data-name="Ćufte u paradajz sosu" data-portion="Mala porcija" data-price="500 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="cufte-velika" data-name="Ćufte u paradajz sosu" data-portion="Velika porcija" data-price="650 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Gulaš od svinjskog mesa</div></td>
-                  <td class="pr">470 / 630 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="gulas-mala" data-name="Gulaš od svinjskog mesa" data-portion="Mala porcija" data-price="470 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="gulas-velika" data-name="Gulaš od svinjskog mesa" data-portion="Velika porcija" data-price="630 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="pr">500 / 670 din</td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="gulas-mala" data-name="Gulaš od svinjskog mesa" data-portion="Mala porcija" data-price="500 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="gulas-velika" data-name="Gulaš od svinjskog mesa" data-portion="Velika porcija" data-price="670 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Sarma / punjena paprika</div></td>
                   <td class="pr">500 / 680 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="sarma-mala" data-name="Sarma / punjena paprika" data-portion="Mala porcija" data-price="500 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="sarma-velika" data-name="Sarma / punjena paprika" data-portion="Velika porcija" data-price="680 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="sarma-mala" data-name="Sarma / punjena paprika" data-portion="Mala porcija" data-price="500 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="sarma-velika" data-name="Sarma / punjena paprika" data-portion="Velika porcija" data-price="680 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
+                <tr>
+                  <td><div class="menuName">Piletina u sosu od pavlake</div></td>
+                  <td class="pr">470 / 640 din</td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="piletina-pavlaka-mala" data-name="Piletina u sosu od pavlake" data-portion="Mala porcija" data-price="470 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="piletina-pavlaka-velika" data-name="Piletina u sosu od pavlake" data-portion="Velika porcija" data-price="640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
+                </tr>
+                <tr>
+                  <td><div class="menuName">Tarana sa srpskom kobasicom</div></td>
+                  <td class="pr">440 / 570 din</td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="tarana-mala" data-name="Tarana sa srpskom kobasicom" data-portion="Mala porcija" data-price="440 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="tarana-velika" data-name="Tarana sa srpskom kobasicom" data-portion="Velika porcija" data-price="570 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
+                </tr>
                 <tr>
                   <td><div class="menuName">Špagete bolognese</div></td>
                   <td class="pr">480 / 640 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="spagete-mala" data-name="Špagete bolognese" data-portion="Mala porcija" data-price="480 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="spagete-velika" data-name="Špagete bolognese" data-portion="Velika porcija" data-price="640 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="spagete-mala" data-name="Špagete bolognese" data-portion="Mala porcija" data-price="480 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="spagete-velika" data-name="Špagete bolognese" data-portion="Velika porcija" data-price="640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
               </tbody>
             </table>
 
+            <!-- POHOVANI -->
             <div class="sectionTitle">Pohovani obroci u porciji</div>
             <table class="menuTable">
-              <thead>
-                <tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
-              </thead>
+              <thead><tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr></thead>
               <tbody>
                 <tr>
                   <td><div class="menuName">Bečka šnicla sa prilozima</div></td>
                   <td class="pr">470 / 640 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="becka-mala" data-name="Bečka šnicla sa prilozima" data-portion="Mala porcija" data-price="470 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="becka-velika" data-name="Bečka šnicla sa prilozima" data-portion="Velika porcija" data-price="640 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="becka-mala" data-name="Bečka šnicla sa prilozima" data-portion="Mala porcija" data-price="470 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="becka-velika" data-name="Bečka šnicla sa prilozima" data-portion="Velika porcija" data-price="640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Karađorđeva šnicla sa prilozima</div></td>
                   <td class="pr">530 / 680 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="karadjordjev-mala" data-name="Karađorđeva šnicla sa prilozima" data-portion="Mala porcija" data-price="530 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="karadjordjev-velika" data-name="Karađorđeva šnicla sa prilozima" data-portion="Velika porcija" data-price="680 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="karadjordjev-mala" data-name="Karađorđeva šnicla sa prilozima" data-portion="Mala porcija" data-price="530 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="karadjordjev-velika" data-name="Karađorđeva šnicla sa prilozima" data-portion="Velika porcija" data-price="680 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Pileći štapići sa prilozima</div></td>
                   <td class="pr">470 / 640 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="stapici-mala" data-name="Pileći štapići sa prilozima" data-portion="Mala porcija" data-price="470 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="stapici-velika" data-name="Pileći štapići sa prilozima" data-portion="Velika porcija" data-price="640 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="stapici-mala" data-name="Pileći štapići sa prilozima" data-portion="Mala porcija" data-price="470 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="stapici-velika" data-name="Pileći štapići sa prilozima" data-portion="Velika porcija" data-price="640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Pileći štapići (med, med senf, caciki) sa prilozima</div></td>
                   <td class="pr">500 / 670 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="stapici-sos-mala" data-name="Pileći štapići (med, med senf, caciki) sa prilozima" data-portion="Mala porcija" data-price="500 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="stapici-sos-velika" data-name="Pileći štapići (med, med senf, caciki) sa prilozima" data-portion="Velika porcija" data-price="670 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="stapici-sos-mala" data-name="Pileći štapići (med, med senf, caciki) sa prilozima" data-portion="Mala porcija" data-price="500 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="stapici-sos-velika" data-name="Pileći štapići (med, med senf, caciki) sa prilozima" data-portion="Velika porcija" data-price="670 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Pohovani sir sa prilozima</div></td>
                   <td class="pr">470 / 640 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="sir-mala" data-name="Pohovani sir sa prilozima" data-portion="Mala porcija" data-price="470 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="sir-velika" data-name="Pohovani sir sa prilozima" data-portion="Velika porcija" data-price="640 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="sir-mala" data-name="Pohovani sir sa prilozima" data-portion="Mala porcija" data-price="470 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="sir-velika" data-name="Pohovani sir sa prilozima" data-portion="Velika porcija" data-price="640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Pohovana punjena palačinka sa prilozima</div></td>
                   <td class="pr">590 din</td>
-                  <td class="qtyCell">
-                    <select class="qty menu-qty" data-key="palacinka-pohovana" data-name="Pohovana punjena palačinka sa prilozima" data-price="590 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </td>
+                  <td class="qtyCell"><select class="qty menu-qty" data-key="palacinka-pohovana" data-name="Pohovana punjena palačinka sa prilozima" data-price="590 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
                 </tr>
               </tbody>
             </table>
 
+            <!-- PEČENI -->
             <div class="sectionTitle">Pečeni obroci u porciji</div>
             <table class="menuTable">
-              <thead>
-                <tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
-              </thead>
+              <thead><tr><th>Jelo</th><th>Cena</th><th class="qtyCell">Količina</th></tr></thead>
               <tbody>
                 <tr>
                   <td><div class="menuName">Pileća krilca sa prilozima</div></td>
                   <td class="pr">470 / 640 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="krilca-mala" data-name="Pileća krilca sa prilozima" data-portion="Mala porcija" data-price="470 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="krilca-velika" data-name="Pileća krilca sa prilozima" data-portion="Velika porcija" data-price="640 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="krilca-mala" data-name="Pileća krilca sa prilozima" data-portion="Mala porcija" data-price="470 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="krilca-velika" data-name="Pileća krilca sa prilozima" data-portion="Velika porcija" data-price="640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Pileća krilca (med, med senf, caciki) sa prilozima</div></td>
                   <td class="pr">500 / 670 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="krilca-sos-mala" data-name="Pileća krilca (med, med senf, caciki) sa prilozima" data-portion="Mala porcija" data-price="500 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="krilca-sos-velika" data-name="Pileća krilca (med, med senf, caciki) sa prilozima" data-portion="Velika porcija" data-price="670 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="krilca-sos-mala" data-name="Pileća krilca (med, med senf, caciki) sa prilozima" data-portion="Mala porcija" data-price="500 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="krilca-sos-velika" data-name="Pileća krilca (med, med senf, caciki) sa prilozima" data-portion="Velika porcija" data-price="670 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Grilovano belo meso sa prilozima</div></td>
                   <td class="pr">470 / 640 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="grilovano-mala" data-name="Grilovano belo meso sa prilozima" data-portion="Mala porcija" data-price="470 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="grilovano-velika" data-name="Grilovano belo meso sa prilozima" data-portion="Velika porcija" data-price="640 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="grilovano-mala" data-name="Grilovano belo meso sa prilozima" data-portion="Mala porcija" data-price="470 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="grilovano-velika" data-name="Grilovano belo meso sa prilozima" data-portion="Velika porcija" data-price="640 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Grilovano belo sa sirom i prilozima</div></td>
                   <td class="pr">500 / 660 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="grilovano-sir-mala" data-name="Grilovano belo sa sirom i prilozima" data-portion="Mala porcija" data-price="500 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="grilovano-sir-velika" data-name="Grilovano belo sa sirom i prilozima" data-portion="Velika porcija" data-price="660 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="grilovano-sir-mala" data-name="Grilovano belo sa sirom i prilozima" data-portion="Mala porcija" data-price="500 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="grilovano-sir-velika" data-name="Grilovano belo sa sirom i prilozima" data-portion="Velika porcija" data-price="660 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Texas piletina sa prilozima</div></td>
                   <td class="pr">530 / 690 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="texas-mala" data-name="Texas piletina sa prilozima" data-portion="Mala porcija" data-price="530 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="texas-velika" data-name="Texas piletina sa prilozima" data-portion="Velika porcija" data-price="690 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="texas-mala" data-name="Texas piletina sa prilozima" data-portion="Mala porcija" data-price="530 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="texas-velika" data-name="Texas piletina sa prilozima" data-portion="Velika porcija" data-price="690 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
-                  <td><div class="menuName">Kanzas piletina sa prilozima</div></td>
-                  <td class="pr">530 / 690 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="kanzas-mala" data-name="Kanzas piletina sa prilozima" data-portion="Mala porcija" data-price="530 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="kanzas-velika" data-name="Kanzas piletina sa prilozima" data-portion="Velika porcija" data-price="690 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td><div class="menuName">Chicago piletina sa prilozima</div></td>
+                  <td class="pr">550 / 710 din</td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="chicago-mala" data-name="Chicago piletina sa prilozima" data-portion="Mala porcija" data-price="550 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="chicago-velika" data-name="Chicago piletina sa prilozima" data-portion="Velika porcija" data-price="710 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Mexico piletina sa prilozima</div></td>
-                  <td class="pr">550 / 710 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="mexico-mala" data-name="Mexico piletina sa prilozima" data-portion="Mala porcija" data-price="550 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="mexico-velika" data-name="Mexico piletina sa prilozima" data-portion="Velika porcija" data-price="710 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="pr">550 / 700 din</td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="mexico-mala" data-name="Mexico piletina sa prilozima" data-portion="Mala porcija" data-price="550 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="mexico-velika" data-name="Mexico piletina sa prilozima" data-portion="Velika porcija" data-price="700 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Pečeni pileći batak sa prilozima</div></td>
                   <td class="pr">570 din</td>
-                  <td class="qtyCell">
-                    <select class="qty menu-qty" data-key="batak" data-name="Pečeni pileći batak sa prilozima" data-price="570 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </td>
+                  <td class="qtyCell"><select class="qty menu-qty" data-key="batak" data-name="Pečeni pileći batak sa prilozima" data-price="570 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Pečena slanina sa prilozima</div></td>
                   <td class="pr">580 din</td>
-                  <td class="qtyCell">
-                    <select class="qty menu-qty" data-key="slanina" data-name="Pečena slanina sa prilozima" data-price="580 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </td>
+                  <td class="qtyCell"><select class="qty menu-qty" data-key="slanina" data-name="Pečena slanina sa prilozima" data-price="580 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Fašir sa prilozima</div></td>
                   <td class="pr">560 din</td>
-                  <td class="qtyCell">
-                    <select class="qty menu-qty" data-key="fasir" data-name="Fašir sa prilozima" data-price="560 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </td>
+                  <td class="qtyCell"><select class="qty menu-qty" data-key="fasir" data-name="Fašir sa prilozima" data-price="560 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Pečena kobasica sa prilozima</div></td>
                   <td class="pr">570 din</td>
-                  <td class="qtyCell">
-                    <select class="qty menu-qty" data-key="kobasica" data-name="Pečena kobasica sa prilozima" data-price="570 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </td>
+                  <td class="qtyCell"><select class="qty menu-qty" data-key="kobasica" data-name="Pečena kobasica sa prilozima" data-price="570 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Pljeskavica u porciji sa prilozima</div></td>
                   <td class="pr">530 din</td>
-                  <td class="qtyCell">
-                    <select class="qty menu-qty" data-key="pljeskavica" data-name="Pljeskavica u porciji sa prilozima" data-price="530 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </td>
+                  <td class="qtyCell"><select class="qty menu-qty" data-key="pljeskavica" data-name="Pljeskavica u porciji sa prilozima" data-price="530 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td>
                 </tr>
-
                 <tr>
                   <td><div class="menuName">Ćevapi u porciji sa prilozima</div></td>
                   <td class="pr">530 / 900 din</td>
-                  <td class="qtyCell">
-                    <div class="qtyGroup">
-                      <div class="qtyRow">
-                        <span class="qtyTag">Mala</span>
-                        <select class="qty menu-qty" data-key="cevapi-mala" data-name="Ćevapi u porciji sa prilozima" data-portion="Mala porcija" data-price="530 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                      <div class="qtyRow">
-                        <span class="qtyTag">Velika</span>
-                        <select class="qty menu-qty" data-key="cevapi-velika" data-name="Ćevapi u porciji sa prilozima" data-portion="Velika porcija" data-price="900 din">
-                          <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </td>
+                  <td class="qtyCell"><div class="qtyGroup">
+                    <div class="qtyRow"><span class="qtyTag">Mala</span><select class="qty menu-qty" data-key="cevapi-mala" data-name="Ćevapi u porciji sa prilozima" data-portion="Mala porcija" data-price="530 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                    <div class="qtyRow"><span class="qtyTag">Velika</span><select class="qty menu-qty" data-key="cevapi-velika" data-name="Ćevapi u porciji sa prilozima" data-portion="Velika porcija" data-price="900 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1231,22 +605,20 @@
               <strong>Prilozi:</strong> pomfrit, bareni krompir, krompir pire, spanać, grašak, pirinač, sos od paradajza, kupus salata, krastavac salata, mešana salata, ruska salata, luk u pavlaci
             </div>
 
+            <!-- SALATE -->
             <div class="sectionTitle" style="margin-top:18px;">Salate i dodaci</div>
             <table class="menuTable">
-              <thead>
-                <tr><th>Stavka</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
-              </thead>
+              <thead><tr><th>Stavka</th><th>Cena</th><th class="qtyCell">Količina</th></tr></thead>
               <tbody>
                 <tr><td><div class="menuName">Cezar salata</div></td><td class="pr">480 din</td><td class="qtyCell"><select class="qty menu-qty" data-key="cezar" data-name="Cezar salata" data-price="480 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
                 <tr><td><div class="menuName">Sos od višnje</div></td><td class="pr">140 din</td><td class="qtyCell"><select class="qty menu-qty" data-key="sos-visnje" data-name="Sos od višnje" data-price="140 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
               </tbody>
             </table>
 
+            <!-- OVALI -->
             <div class="sectionTitle">Ovali</div>
             <table class="menuTable">
-              <thead>
-                <tr><th>Oval</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
-              </thead>
+              <thead><tr><th>Oval</th><th>Cena</th><th class="qtyCell">Količina</th></tr></thead>
               <tbody>
                 <tr><td><div class="menuName">Pohovani oval</div><div class="sub">(3–4 osobe)</div></td><td class="pr">2650 din</td><td class="qtyCell"><select class="qty menu-qty" data-key="oval-pohovan" data-name="Pohovani oval (3–4 osobe)" data-price="2650 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td></tr>
                 <tr><td><div class="menuName">Mix oval</div><div class="sub">(3–4 osobe)</div></td><td class="pr">2650 din</td><td class="qtyCell"><select class="qty menu-qty" data-key="oval-mix" data-name="Mix oval (3–4 osobe)" data-price="2650 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></td></tr>
@@ -1255,16 +627,16 @@
               </tbody>
             </table>
 
+            <!-- DESERTI -->
             <div class="sectionTitle">Deserti</div>
             <table class="menuTable">
-              <thead>
-                <tr><th>Desert</th><th>Cena</th><th class="qtyCell">Količina</th></tr>
-              </thead>
+              <thead><tr><th>Desert</th><th>Cena</th><th class="qtyCell">Količina</th></tr></thead>
               <tbody>
                 <tr><td><div class="menuName">Palačinke sa nutelom/kajsijom</div><div class="sub">(dve palačinke)</div></td><td class="pr">300 din</td><td class="qtyCell"><select class="qty menu-qty" data-key="palacinka-desert" data-name="Palačinke sa nutelom/kajsijom (dve palačinke)" data-price="300 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
                 <tr><td><div class="menuName">Oblatne</div><div class="sub">sa kakao i kokos kremom</div></td><td class="pr">100 din</td><td class="qtyCell"><select class="qty menu-qty" data-key="oblatne" data-name="Oblatne sa kakao i kokos kremom" data-price="100 din"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></td></tr>
               </tbody>
             </table>
+
           </div>
         </section>
 
@@ -1273,7 +645,6 @@
             <h2>Brza porudžbina</h2>
             <small>Pošalji izabrane stavke direktno kuhinji</small>
           </div>
-
           <div class="bd">
             <div class="row">
               <div>
@@ -1285,7 +656,6 @@
                 <input id="phone" inputmode="tel" autocomplete="tel" placeholder="Npr. 06x...">
               </div>
             </div>
-
             <div class="row">
               <div>
                 <label for="email">Email (opciono)</label>
@@ -1299,10 +669,8 @@
                 </select>
               </div>
             </div>
-
             <label for="address">Adresa (ako je dostava)</label>
             <input id="address" autocomplete="street-address" placeholder="Ulica i broj, sprat, interfon...">
-
             <label for="note">Napomena / ostalo (opciono)</label>
             <textarea id="note" placeholder="Npr: bez luka, ljuto, vreme dostave, dodatni prilozi, posebna napomena..."></textarea>
 
@@ -1323,11 +691,7 @@
               <button type="button" id="submitBtn">Pošalji porudžbinu</button>
               <a class="btn" href="tel:+381616856590">Pozovi</a>
             </div>
-
-            <div class="mini">
-              Porudžbina se šalje direktno sa sajta preko Web3Forms.
-            </div>
-
+            <div class="mini">Porudžbina se šalje direktno sa sajta preko Web3Forms.</div>
             <div id="formStatus" class="status" aria-live="polite"></div>
           </div>
         </aside>
@@ -1351,40 +715,31 @@
     const WEB3FORMS_KEY = "cbfd0333-5bad-45ad-b0f3-6fb64af0b6d1";
     const WEB3FORMS_URL = "https://api.web3forms.com/submit";
 
-    const formStatus  = document.getElementById("formStatus");
+    const formStatus   = document.getElementById("formStatus");
     const orderPreview = document.getElementById("orderPreview");
-    const submitBtn   = document.getElementById("submitBtn");
-    const pickupField = document.getElementById("pickup");
+    const submitBtn    = document.getElementById("submitBtn");
+    const pickupField  = document.getElementById("pickup");
     const addressField = document.getElementById("address");
-    const nameField   = document.getElementById("name");
-    const phoneField  = document.getElementById("phone");
-    const emailField  = document.getElementById("email");
-    const noteField   = document.getElementById("note");
+    const nameField    = document.getElementById("name");
+    const phoneField   = document.getElementById("phone");
+    const emailField   = document.getElementById("email");
+    const noteField    = document.getElementById("note");
 
-    // --- All selects, keyed by data-key so duplicates sync ---
     const allSelects = document.querySelectorAll(".menu-qty");
 
-    // Build a map: key -> { selects[], name, price, portion? }
+    // Group selects by data-key so specials grid + table stay in sync
     const keyMap = {};
     allSelects.forEach(sel => {
       const key = sel.dataset.key;
       if (!keyMap[key]) {
-        keyMap[key] = {
-          selects: [],
-          name: sel.dataset.name,
-          price: sel.dataset.price,
-          portion: sel.dataset.portion || null
-        };
+        keyMap[key] = { selects: [], name: sel.dataset.name, price: sel.dataset.price, portion: sel.dataset.portion || null };
       }
       keyMap[key].selects.push(sel);
     });
 
-    // Sync all selects with the same key when one changes
     allSelects.forEach(sel => {
       sel.addEventListener("change", () => {
-        const key = sel.dataset.key;
-        const val = sel.value;
-        keyMap[key].selects.forEach(s => { s.value = val; });
+        keyMap[sel.dataset.key].selects.forEach(s => { s.value = sel.value; });
         renderPreview();
         clearStatus();
       });
@@ -1411,64 +766,41 @@
         orderPreview.innerHTML = '<div class="summaryEmpty">Još ništa nije izabrano.</div>';
         return;
       }
-      orderPreview.innerHTML = items.map(item => `
-        <div class="summaryItem">
-          <div>${item.qty}x ${item.name}</div>
-          <div>${item.price}</div>
-        </div>
-      `).join("");
+      orderPreview.innerHTML = items.map(item =>
+        `<div class="summaryItem"><div>${item.qty}x ${item.name}</div><div>${item.price}</div></div>`
+      ).join("");
     }
 
     function updateAddressRequirement() {
-      const isDelivery = pickupField.value === "Dostava";
-      if (!isDelivery) addressField.value = "";
+      if (pickupField.value !== "Dostava") addressField.value = "";
     }
 
-    pickupField.addEventListener("change", () => {
-      updateAddressRequirement();
-      clearStatus();
-    });
+    pickupField.addEventListener("change", () => { updateAddressRequirement(); clearStatus(); });
 
-    function setError(msg) {
-      formStatus.textContent = msg;
-      formStatus.className = "status show err";
-    }
-    function setSuccess(msg) {
-      formStatus.textContent = msg;
-      formStatus.className = "status show ok";
-    }
-    function clearStatus() {
-      formStatus.textContent = "";
-      formStatus.className = "status";
-    }
+    function setError(msg) { formStatus.textContent = msg; formStatus.className = "status show err"; }
+    function setSuccess(msg) { formStatus.textContent = msg; formStatus.className = "status show ok"; }
+    function clearStatus() { formStatus.textContent = ""; formStatus.className = "status"; }
 
     function buildOrderMessage(data, items) {
       const totalQty = items.reduce((s, i) => s + i.qty, 0);
       const lines = [
-        "ROUTE 66 - PORUDŽBINA",
-        "",
+        "ROUTE 66 - PORUDŽBINA", "",
         "PODACI KUPCA",
         `Ime i prezime: ${data.name}`,
         `Telefon: ${data.phone}`,
         `Email: ${data.email || "Nije unet"}`,
         `Način: ${data.pickup}`,
         `Adresa: ${data.pickup === "Dostava" ? (data.address || "Nije uneta") : "Lično preuzimanje"}`,
-        `Napomena: ${data.note || "Nema"}`,
-        "",
+        `Napomena: ${data.note || "Nema"}`, "",
         "IZABRANE STAVKE"
       ];
-      items.forEach((item, i) => {
-        lines.push(`${i + 1}. ${item.qty}x ${item.name} (${item.price})`);
-      });
-      lines.push("");
-      lines.push(`Ukupno različitih stavki: ${items.length}`);
-      lines.push(`Ukupno komada/porcija: ${totalQty}`);
+      items.forEach((item, i) => lines.push(`${i + 1}. ${item.qty}x ${item.name} (${item.price})`));
+      lines.push("", `Ukupno različitih stavki: ${items.length}`, `Ukupno komada/porcija: ${totalQty}`);
       return lines.join("\n");
     }
 
     submitBtn.addEventListener("click", async () => {
       clearStatus();
-
       const name    = nameField.value.trim();
       const phone   = phoneField.value.trim();
       const email   = emailField.value.trim();
@@ -1482,39 +814,27 @@
       if (pickup === "Dostava" && !address) { setError("Unesi adresu za dostavu."); addressField.focus(); return; }
       if (items.length === 0) { setError("Izaberi bar jednu stavku iz menija."); return; }
 
-      const data = { name, phone, email, pickup, address, note };
-      const message = buildOrderMessage(data, items);
+      const message = buildOrderMessage({ name, phone, email, pickup, address, note }, items);
 
-      // Build FormData manually — avoids hidden-field timing issues
       const fd = new FormData();
-      fd.append("access_key",  WEB3FORMS_KEY);
-      fd.append("subject",     "Nova porudžbina - Route 66");
-      fd.append("from_name",   "Route 66 Subotica sajt");
-      fd.append("message",     message);
+      fd.append("access_key", WEB3FORMS_KEY);
+      fd.append("subject",    "Nova porudžbina - Route 66");
+      fd.append("from_name",  "Route 66 Subotica sajt");
+      fd.append("message",    message);
       if (email) fd.append("replyto", email);
 
       submitBtn.disabled = true;
       submitBtn.textContent = "Slanje...";
 
       try {
-        const response = await fetch(WEB3FORMS_URL, {
-          method: "POST",
-          body: fd,
-          headers: { "Accept": "application/json" }
-        });
-
+        const response = await fetch(WEB3FORMS_URL, { method: "POST", body: fd, headers: { "Accept": "application/json" } });
         let result = null;
         try { result = await response.json(); } catch(_) {}
 
         if (response.ok && result && result.success) {
           setSuccess("✅ Porudžbina je uspešno poslata! Uskoro ćemo vas kontaktirati.");
-          // Reset all selects
           allSelects.forEach(s => { s.value = "0"; });
-          nameField.value = "";
-          phoneField.value = "";
-          emailField.value = "";
-          addressField.value = "";
-          noteField.value = "";
+          nameField.value = phoneField.value = emailField.value = addressField.value = noteField.value = "";
           pickupField.value = "Dostava";
           renderPreview();
           window.scrollTo({ top: document.getElementById("poruci").offsetTop - 20, behavior: "smooth" });
