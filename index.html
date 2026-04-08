@@ -39,13 +39,6 @@
     .btn:hover{transform:translateY(-1px)}
     .btn-yellow{background:linear-gradient(180deg,var(--yellow2),var(--yellow));color:#141414;border-color:rgba(255,210,0,.5);}
     .btn-green{background:linear-gradient(180deg,#36f09a,var(--ok));color:#08140e;border-color:rgba(36,210,122,.45);}
-    /* Tomorrow banner */
-    .tomorrow-wrap{padding:14px 16px 0;}
-    .tomorrow-banner{padding:14px 16px;border-radius:16px;border:1px solid rgba(255,150,0,.5);background:linear-gradient(135deg,rgba(255,140,0,.14),rgba(255,210,0,.07));display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap;}
-    .tomorrow-label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.3px;color:#ffa500;white-space:nowrap;padding-top:2px;line-height:1.6;}
-    .tomorrow-items{display:flex;flex-wrap:wrap;gap:8px;flex:1;}
-    .tomorrow-item{background:rgba(255,210,0,.09);border:1px solid rgba(255,210,0,.22);border-radius:10px;padding:6px 10px;font-size:12px;font-weight:700;color:var(--text);}
-    .tomorrow-item span{color:var(--yellow);font-weight:900;}
     .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;padding:16px;}
     @media(max-width:980px){.grid{grid-template-columns:1fr;}}
     .card{border:1px solid var(--line);background:rgba(17,17,17,.84);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
@@ -134,26 +127,13 @@
         </div>
       </div>
 
-      <!-- SUTRAŠNJI SPECIJALI BANNER -->
-      <div class="tomorrow-wrap">
-        <div class="tomorrow-banner">
-          <div class="tomorrow-label">🌅 Sutra<br>07. april<br>(Utorak)</div>
-          <div class="tomorrow-items">
-            <div class="tomorrow-item">Pasulj sa butkicom <span>470 / 640 din</span></div>
-            <div class="tomorrow-item">Punjena paprika <span>500 / 680 din</span></div>
-            <div class="tomorrow-item">Kansas piletina sa prilozima <span>530 / 690 din</span></div>
-            <div class="tomorrow-item">Bečka šnicla sa prilozima <span>470 / 640 din</span></div>
-          </div>
-        </div>
-      </div>
-
       <div class="grid">
         <section class="card">
           <div class="hd"><h2>Meni</h2><small>Izaberi količinu za svaku stavku</small></div>
           <div class="bd">
 
-            <!-- SPECIJALI (sutrašnji za naručivanje unapred) -->
-            <div class="sectionTitle">Specijali za sutra (07. april)</div>
+            <!-- SPECIJALI (današnji) -->
+            <div class="sectionTitle">Specijali za danas (08. april — Sreda)</div>
             <div class="specialsGrid">
 
               <div class="specialCard">
@@ -174,50 +154,50 @@
               </div>
 
               <div class="specialCard">
-                <div class="specialName">Punjena paprika</div>
-                <div class="specialPrice">500 / 680 din</div>
-                <div class="qtyGroup">
-                  <div class="qtyRow"><span class="qtyTag">Mala</span>
-                    <select class="qty menu-qty" data-key="spec-paprika-mala" data-name="Punjena paprika" data-portion="Mala porcija" data-price="500 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </div>
-                  <div class="qtyRow"><span class="qtyTag">Velika</span>
-                    <select class="qty menu-qty" data-key="spec-paprika-velika" data-name="Punjena paprika" data-portion="Velika porcija" data-price="680 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div class="specialCard">
-                <div class="specialName">Kansas piletina sa prilozima</div>
-                <div class="specialPrice">530 / 690 din</div>
-                <div class="qtyGroup">
-                  <div class="qtyRow"><span class="qtyTag">Mala</span>
-                    <select class="qty menu-qty" data-key="spec-kansas-mala" data-name="Kansas piletina sa prilozima" data-portion="Mala porcija" data-price="530 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </div>
-                  <div class="qtyRow"><span class="qtyTag">Velika</span>
-                    <select class="qty menu-qty" data-key="spec-kansas-velika" data-name="Kansas piletina sa prilozima" data-portion="Velika porcija" data-price="690 din">
-                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div class="specialCard">
-                <div class="specialName">Bečka šnicla sa prilozima</div>
+                <div class="specialName">Slatki kupus sa butkicom</div>
                 <div class="specialPrice">470 / 640 din</div>
                 <div class="qtyGroup">
                   <div class="qtyRow"><span class="qtyTag">Mala</span>
-                    <select class="qty menu-qty" data-key="spec-becka-mala" data-name="Bečka šnicla sa prilozima" data-portion="Mala porcija" data-price="470 din">
+                    <select class="qty menu-qty" data-key="spec-kupus-mala" data-name="Slatki kupus sa butkicom" data-portion="Mala porcija" data-price="470 din">
                       <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                     </select>
                   </div>
                   <div class="qtyRow"><span class="qtyTag">Velika</span>
-                    <select class="qty menu-qty" data-key="spec-becka-velika" data-name="Bečka šnicla sa prilozima" data-portion="Velika porcija" data-price="640 din">
+                    <select class="qty menu-qty" data-key="spec-kupus-velika" data-name="Slatki kupus sa butkicom" data-portion="Velika porcija" data-price="640 din">
+                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="specialCard">
+                <div class="specialName">Mexico piletina sa prilozima</div>
+                <div class="specialPrice">550 / 700 din</div>
+                <div class="qtyGroup">
+                  <div class="qtyRow"><span class="qtyTag">Mala</span>
+                    <select class="qty menu-qty" data-key="spec-mexico-mala" data-name="Mexico piletina sa prilozima" data-portion="Mala porcija" data-price="550 din">
+                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                    </select>
+                  </div>
+                  <div class="qtyRow"><span class="qtyTag">Velika</span>
+                    <select class="qty menu-qty" data-key="spec-mexico-velika" data-name="Mexico piletina sa prilozima" data-portion="Velika porcija" data-price="700 din">
+                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="specialCard">
+                <div class="specialName">Texas piletina sa prilozima</div>
+                <div class="specialPrice">530 / 690 din</div>
+                <div class="qtyGroup">
+                  <div class="qtyRow"><span class="qtyTag">Mala</span>
+                    <select class="qty menu-qty" data-key="spec-texas-mala" data-name="Texas piletina sa prilozima" data-portion="Mala porcija" data-price="530 din">
+                      <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                    </select>
+                  </div>
+                  <div class="qtyRow"><span class="qtyTag">Velika</span>
+                    <select class="qty menu-qty" data-key="spec-texas-velika" data-name="Texas piletina sa prilozima" data-portion="Velika porcija" data-price="690 din">
                       <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
                     </select>
                   </div>
