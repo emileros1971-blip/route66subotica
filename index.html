@@ -26,7 +26,9 @@
     a{color:inherit}
     .wrap{max-width:var(--max);margin:0 auto;padding:26px var(--pad) 70px;}
     .top{border:1px solid var(--line);background:rgba(17,17,17,.8);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;backdrop-filter:blur(10px);}
-    .hero{padding:18px 18px 14px;display:flex;gap:16px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(255,210,0,.16),rgba(0,0,0,0));}
+    .hero{padding:18px 18px 14px;display:flex;gap:16px;align-items:flex-start;justify-content:space-between;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(255,210,0,.16),rgba(0,0,0,0));}
+    .brand{flex:1;min-width:0;}
+    @media(max-width:680px){.hero{flex-wrap:wrap;}}
     .brand h1{margin:0;font-size:24px;letter-spacing:.2px;}
     .brand p{margin:8px 0 0;color:var(--muted);line-height:1.45;font-size:13px;max-width:860px;}
     .notice{margin-top:10px;padding:10px 12px;border-radius:14px;border:1px dashed rgba(255,210,0,.35);background:rgba(255,210,0,.07);display:flex;gap:10px;flex-wrap:wrap;}
@@ -34,9 +36,10 @@
     .badges{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;}
     .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;font-size:12px;font-weight:800;background:rgba(255,210,0,.95);color:#141414;}
     .badge.dark{background:rgba(255,255,255,.08);color:var(--text);border:1px solid rgba(255,255,255,.12);font-weight:700;}
-    .actions{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
-    .actions-logo{width:150px;height:150px;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(255,210,0,.35));flex-shrink:0;}
-    .actions-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
+    .actions{display:flex;flex-direction:column;gap:12px;align-items:center;flex-shrink:0;}
+    .actions-logo{width:150px;height:150px;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(255,210,0,.35));}
+    .actions-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+    @media(max-width:680px){.actions{width:100%;align-items:flex-start;}.actions-btns{justify-content:flex-start;}}
     .btn{border:1px solid var(--line);background:var(--card2);color:var(--text);padding:11px 14px;border-radius:14px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;font-weight:900;box-shadow:0 10px 24px rgba(0,0,0,.25);white-space:nowrap;transition:transform .15s ease;}
     .btn:hover{transform:translateY(-1px)}
     .btn-yellow{background:linear-gradient(180deg,var(--yellow2),var(--yellow));color:#141414;border-color:rgba(255,210,0,.5);}
@@ -122,7 +125,7 @@
           </div>
         </div>
         <div class="actions">
-          <img src="logo.png" alt="Route 66 Subotica" class="actions-logo">
+          <img src="fe92a2dc-2451-4d9d-aa64-5289499af64c__2_.png" alt="Route 66 Subotica" class="actions-logo">
           <div class="actions-btns">
             <a class="btn btn-yellow" href="#poruci">Poruči odmah</a>
             <a class="btn" href="tel:+381616856590">Pozovi</a>
